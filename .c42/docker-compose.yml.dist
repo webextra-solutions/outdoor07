@@ -1,0 +1,58 @@
+version: '2'
+
+services:
+  web:
+    build: .c42/docker/cake
+    network_mode: "bridge"
+    links:
+      - db
+      - mail
+    ports:
+      - 80
+    volumes:
+      - ./:/var/www
+      - .c42/docker/php_additional.ini:/usr/local/etc/php/conf.d/php_additional.ini
+    environment:
+      VIRTUAL_HOST: extranet-cake2.handisport.lvh.me
+
+
+  db:
+    image: mysql:5.6
+    network_mode: "bridge"
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: ExtranetFFH
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    network_mode: "bridge"
+    links:
+      - db
+    ports:
+      - 80
+    environment:
+      VIRTUAL_HOST: pma-cake2.handisport.lvh.me
+
+  composer:
+    build: .c42/docker/composer
+    network_mode: "bridge"
+    links:
+      - db
+    volumes:
+      - $HOME/.composer:/composer
+      - ./:/var/www
+    working_dir: /var/www
+
+  mail:
+    image: occitech/alpine-mailhog:latest
+    network_mode: "bridge"
+    ports:
+      - 8025
+    environment:
+      VIRTUAL_HOST: mail-cake2.handisport.lvh.me
+      VIRTUAL_PORT: 8025
+
+volumes:
+  db_data:
