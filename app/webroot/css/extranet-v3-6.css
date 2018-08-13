@@ -1,0 +1,68 @@
+/***************** FEUILLE DE STYLE - MODULE PARAMETRES***************************************************************************************/
+.module6{
+	color: #FFF;
+	font-size: 10px;
+	float: left;
+	padding: 7px;
+	text-align:center; 
+	width: 90px;
+	height: 84px;
+	background: #333;
+	border-left:1px solid #333;
+}
+
+.module6 a{
+	color: #FFF;
+	text-decoration: none;	
+}
+
+.module6 i{
+	color: #FFF;	
+}
+
+#sep6{
+	clear: both;
+	background: #333;
+	color: #FFF;
+	padding:15px;
+}
+
+#footer6{
+	font-size: 10px;
+	text-align: center;
+    clear: both;
+	padding: 10px;
+	background: #333;
+	border-top:1px solid #CCC;
+	color: #FFF;
+}
+
+#header6{
+	background:#333;
+	width:100%;
+	font-size: 350%;
+	color:#FFF;
+	padding: 10px;
+	text-align: center;
+}
+
+#footer6 a {
+	color: #FFF;
+}
+
+#connect_infos{	
+	border-left: 1px solid #CCC;
+	line-height: 20px;
+	padding:12px 20px 12px 20px;
+	background-color: #333;
+	color: #FFF;
+	height: 84px;
+
+}
+
+#menuTop2{
+	background-color: #F0F0F0;
+	border-bottom:5px solid #333;
+	height: 89px;
+}
+

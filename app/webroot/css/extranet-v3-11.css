@@ -1,0 +1,88 @@
+/***************** FEUILLE DE STYLE - MODULE ACCUEIL EXTRANET ***************************************************************************************/
+.module11{
+	color: #FFF;
+	font-weight: bold;
+	font-size: 10px;
+	float: left;
+	padding: 7px;
+	text-align:center; 
+	width: 90px;
+	height: 84px;
+	background: #bd1252;
+	border-left:1px solid #bd1252;
+}
+
+#sep11{
+	clear: both;
+	background: #bd1252;
+	color: #FFF;
+	padding:10px;
+}
+
+#footer11{
+	font-size: 10px;
+	text-align: center;
+    clear: both;
+	padding: 10px;
+	background: #bd1252;
+	border-top:1px solid #CCC;
+	color: #FFF;
+}
+
+#header11{
+	background:#bd1252;
+	width:100%;
+	font-size: 350%;
+	color:#FFF;
+	padding: 10px;
+	text-align: center;
+}
+
+.module11 a, .module11 a:hover, .module11 i, #footer11 a{
+	color: #FFF;
+}
+
+.menuModuleActive11{
+	background:#bd5c80;
+}
+
+
+.nav-pills > li.active > a:hover{
+  color: #fff;
+  background-color: #bd5c80 !important;
+  font-weight: bold;
+}
+
+
+.nav-tabs {
+  border-bottom: 2px solid #bd1252 !important;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {  
+  border: 2px solid #bd1252 !important;
+  background-color: #bd1252 !important;
+  color: #FFF !important;
+
+}
+
+#connect_infos{	
+	border-left: 1px solid #CCC;
+	line-height: 20px;
+	padding:12px 20px 12px 20px;
+	background-color: #bd1252;
+	color: #FFF;
+	height: 84px;
+
+}
+
+#menuTop2{
+	background-color: #f3f9fd;
+	border-bottom:5px solid #bd1252;
+	height: 89px;
+}
+
+
+
+

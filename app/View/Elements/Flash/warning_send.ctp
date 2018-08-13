@@ -1,0 +1,1 @@
+<div class="msg_warning"><i class="glyphicons envelope"></i> <?php echo h($message); ?></div>

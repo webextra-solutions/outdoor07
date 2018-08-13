@@ -1,0 +1,58 @@
+@charset "utf-8";
+/**
+ *
+ * Login CSS for CakePHP
+ *
+ * CSS liés à la page de connexion de l'extranet
+ 
+ */
+
+#EspacePrive {
+  width: 50%;
+  float: left;
+ 
+}
+
+#EspacePublic {
+  	border-left: solid 1px #CCCCCC;
+	margin-left:50%;
+	padding-left:2%;	padding-right: 2%;
+}
+
+#TitreEspacePublic {
+	border: solid 1px #CCCCCC;
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 20px;
+	vertical-align: middle;
+}
+
+#seConnecter {
+	
+	margin-left:155px;
+	
+}
+
+.ActiveAppli {
+	color:#000;
+}
+
+.ActiveAppli:hover {
+	background: #392318;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	cursor:pointer;
+	color:#FFF;
+}
+
+#picture {
+    float:left;
+    width: 50px;
+    padding:5px;
+}
+
+.titreAppli {
+font-size: 12px;
+padding:10px;
+text-align:left;	}

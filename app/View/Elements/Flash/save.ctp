@@ -1,0 +1,1 @@
+<div class="msg_success"><i class="glyphicons floppy_saved" style="margin-right: 10px;"></i> <?php echo h($message); ?></div>

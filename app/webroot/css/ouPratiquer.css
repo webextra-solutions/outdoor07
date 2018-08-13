@@ -1,0 +1,1495 @@
+@charset "utf-8";
+/**
+ *
+ * Generic CSS for CakePHP
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @package       app.webroot.css
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ */
+
+* {
+	margin:0;
+	padding:0;
+
+}
+
+@font-face{ 
+	font-family: 'Opensans';
+	src: url('../fonts/open-sans2/opensans-regular-webfont.eot');
+	src: url('../fonts/open-sans2/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/open-sans2/opensans-regular-webfont.woff') format('woff'),
+	     url('../fonts/open-sans2/opensans-regular-webfont.ttf') format('truetype'),
+	     url('../fonts/open-sans2/opensans-regular-webfont.svg#webfont') format('svg');
+} 
+
+@font-face{ 
+	font-family: 'Opensans';
+	font-weight: bold;
+	src: url('../fonts/open-sans2/opensans-bold-webfont.eot');
+	src: url('../fonts/open-sans2/opensans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/open-sans2/opensans-bold-webfont.woff') format('woff'),
+	     url('../fonts/open-sans2/opensans-bold-webfont.ttf') format('truetype'),
+	     url('../fonts/open-sans2/opensans-bold-webfont.svg#webfont') format('svg');
+} 
+
+/*@font-face{ 
+	font-family: 'Opensans';
+	font-weight: italic;
+	src: url('../fonts/open-sans2/opensans-italic-webfont.eot');
+	src: url('../fonts/open-sans2/opensans-italic-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/open-sans2/opensans-italic-webfont.woff') format('woff'),
+	     url('../fonts/open-sans2/opensans-italic-webfont.ttf') format('truetype'),
+	     url('../fonts/open-sans2/opensans-italic-webfont.svg#webfont') format('svg');
+} */
+
+/** General Style Info **/
+body {
+	background: #FFF;
+	/*background-image: url('../img/logos/Picto-Label-Club-Saison2.png');
+	background-repeat: repeat;*/
+	color: #000;
+	font-family:Opensans,Comic sans;
+	font-size: 12px;
+	margin: 0;
+
+}
+
+
+#login {
+	border-bottom:1px solid #CCC;
+	margin-bottom : 12px;
+}
+
+
+.bulle {
+	border:1px solid #CCC;
+	border-radius : 5px 5px 5px 5px;
+	margin-bottom : 1%;
+	padding:2%;
+	margin-right:4%;
+}
+
+.bulle-icone {
+	border:1px solid #CCC;
+	border-radius : 5px 5px 5px 5px;
+	margin-bottom : 1%;
+	padding:2%;
+	margin-right:4%;
+	float:left;
+}
+
+.bulle-titre {
+	border:1px solid #CCC;
+	border-radius : 5px 5px 5px 5px;
+	margin-bottom : 1%;
+	padding:3.2%;
+	margin-right:4%;
+	margin-left:12%;
+	font-size : 180%;
+}
+
+#bloc_label_1 {
+	width:40%;
+	float:left;
+	margin-top:10px;
+	
+}
+
+.ss_bloc_label {
+	border:1px solid #CCC;
+	border-radius : 5px 5px 5px 5px;
+	padding:5px;
+	height:100px;
+	text-align:left;
+}
+
+#bloc_label_2 {
+	float:left;
+	margin-left:10px;
+	margin-top:10px;
+	width:57%;
+
+}
+
+
+
+
+
+a {
+	color: #1f8023;
+	text-decoration:none;
+	
+}
+a:hover {
+	
+	text-decoration:underline;
+}
+a img {
+	border:none;
+}
+h1, h2, h3, h4 {
+	font-weight: bold;
+	margin-bottom:0.2em;
+}
+h1 {
+	background:#fff;
+	color: #003d4c;
+	font-size: 100%;
+}
+h2 {
+	color: #FFF;
+	font-size: 150%;
+}
+h3 {
+	color: #000;
+
+	font-size: 165%;
+}
+h4 {
+	color: #993;
+	font-weight: normal;
+}
+
+
+ul, li {
+	margin: 0 12px;
+}
+
+p {
+	margin: 0 0 1em 0;
+}
+
+.imgAlign{
+	float:left;
+	padding-right:15px;
+}
+
+/** Layout **/
+#container {
+	text-align: left;
+	margin-left:auto;
+	margin-right:auto;
+	width:1200px;
+	background:#FFFFFF;
+	border-left:1px solid #CCCCCC;
+	border-right:1px solid #CCCCCC;
+	border-bottom:1px solid #CCCCCC;
+	border-radius: 0 0 10px 10px;	
+}
+
+.habillage {
+	background-color : #007732;
+	width:1250px;
+	height:500px;
+	position:relative;
+	-moz-transform:rotate(-2deg); 
+-webkit-transform:rotate(-2deg); 
+-o-transform:rotate(-2deg);
+z-index:-1;
+
+	top:70em;
+	left:22em;
+	
+}
+
+#search {
+	float:right;
+	
+}
+
+.clubs_region td{
+	padding-top:15px;
+	padding-bottom:13px;
+}
+
+.clubs_region tr:hover{
+	cursor:pointer;
+	background-color:#82b006;
+	color:#fff;
+}
+
+.clubs_region tr:hover{
+	cursor:pointer;
+	background-color:#82b006;
+	color:#fff;
+}
+
+.clubs_region .label{
+	cursor:pointer;
+	background-color:#006cba;
+	color:#fff;
+}
+
+.clubs_region .label:hover{
+	cursor:pointer;
+	background-color:#FFF;
+	color:#006cba;
+}
+
+
+
+#titre_content{
+	border-bottom:1px solid #CCCCCC;
+	padding:5px;
+	font-size:22px;
+}
+
+
+.libelle_region{
+	position:absolute;
+	border:1px solid #CCCCCC;
+	border-radius : 5px;
+	padding:10px;
+	display:none;
+	margin-left:450px;
+	margin-top:60px;
+
+}
+
+.colonne1_carte{
+	width:54%;
+	float:left;
+	margin-left:20px;
+}
+
+#canvas_france{
+	padding-left:60px;
+}
+
+
+.colonne2_carte{
+	margin-left:20px;
+	margin-right:20px;
+	width:40%;
+	float:right;
+}
+
+
+.bloc1_region {
+	float:left;
+	margin-left:20px;
+	margin-bottom:20px;
+	border:1px solid #CCCCCC;
+	border-radius : 5px;
+	height:300px;
+	width:230px;
+}
+
+
+
+
+.bloc2_region{
+	margin-left:20px;
+	margin-bottom:20px;
+	height:300px;
+	width:662px;
+	float:left;
+	border :1px solid #CCCCCC;
+	border-radius : 5px;
+}
+
+.bloc3_region{
+	margin-bottom:20px;
+	margin-left:20px;
+	height:300px;
+	width:220px;
+	float:left;
+	border :1px solid #CCCCCC;
+	border-radius : 5px;
+}
+
+.bloc_logo{
+	width:200px;
+	float:left;
+}
+
+.bloc_map_club2{
+	margin-bottom:20px;
+	margin-left:20px;
+	height:300px;
+	width:468px;
+	float:left;
+	border :1px solid #CCCCCC;
+	border-radius : 5px;
+}
+
+.bloc_map_club1{
+	margin-bottom:20px;
+	margin-left:20px;
+	height:300px;
+	width:220px;
+	float:left;
+	border :1px solid #CCCCCC;
+	border-radius : 5px;
+}
+
+
+.bulle_club{
+	margin-right:20px;
+	margin-bottom:20px;
+	float:left;
+	border :1px solid #CCCCCC;
+	border-radius : 5px;
+}
+
+.bulle_sports{
+	margin-right:20px;
+	margin-bottom:20px;
+	float:left;
+	width:371px;
+	border :1px solid #CCCCCC;
+	border-radius : 5px;
+}
+
+.bulle_publics{
+	margin-right:20px;
+	margin-bottom:20px;
+	float:left;
+	width:271px;
+	border :1px solid #CCCCCC;
+	border-radius : 5px;
+}
+
+.bulle_pratiques{
+	margin-bottom:20px;
+	float:left;
+	width:472px;
+	border :1px solid #CCCCCC;
+	border-radius : 5px;
+}
+
+.bulle_label{
+	margin:-5px;
+	padding:16px;
+	float:right;
+	border-left :1px solid #0f4899;
+	border-bottom :1px solid #0f4899;
+	background-color:#FFF;
+	border-radius : 0 0 0 5px;
+	
+}
+
+.ligne2{
+	clear:both;
+	margin:20px;
+
+}
+
+.ligne2 table {
+margin:10px;
+width:auto;
+}
+
+.ligne2 td {
+padding:7px;}
+
+.ligne2 th {
+padding:7px;}
+
+
+.bulle_carte{
+	margin-bottom:20px;
+	border :1px solid #CCCCCC;
+	border-radius : 5px;
+
+	line-height: 18px;
+	font-size:12px;
+	text-align:justify;
+	
+}
+
+.content_bulle_carte{
+	padding:10px;
+	
+}
+
+
+#lienSiteLabel{
+	margin-top:5px;
+	border-radius : 5px;
+	background-color:#FFF;
+	width:120px;
+	padding:5px;
+	text-align:center;
+}
+
+#lienSiteLabel a{
+	color:#006cba;
+}
+
+
+.critere_search{
+	background-color:#F0F0F0;
+	border :1px solid #CCCCCC;
+	border-radius : 5px;
+	margin:5px;
+	padding:5px;
+}
+
+.titre_bulle_club{
+	border-bottom :1px solid #CCCCCC;
+	background-color:#5aa22b;
+	padding:10px;
+	font-weight:bold;
+	font-size:16px;
+	margin-bottom:10px;
+	border-radius:5px;
+	color:#FFF;
+}
+
+.titre_region{
+	border-bottom:1px solid #CCCCCC;
+	padding:5px;
+	font-size:20px;
+	background:url(../img/fonds/degrade-vert.png);
+	background-repeat:repeat-x;
+	color:#FFF;
+}
+
+.titre_dept{
+	border-bottom:1px solid #CCCCCC;
+	padding:5px;
+	font-size:22px;
+	background:url(../img/fonds/degrade-vert.png);
+	background-repeat:repeat-x;
+	color:#FFF;
+}
+
+.titre_club{
+	border-bottom:1px solid #CCCCCC;
+	padding:5px;
+	font-size:22px;
+	background:url(../img/fonds/degrade-vert.png);
+	background-repeat:repeat-x;
+	color:#FFF;
+}
+
+
+.bloc_club_label{
+	margin-left:20px;
+	margin-bottom:20px;
+	height:auto;
+	width:662px;
+	float:left;
+	border :1px solid #0f4899;
+	border-radius : 5px;
+}
+
+
+
+
+.titre_club_label{
+	border-bottom:1px solid #CCCCCC;
+	padding:5px;
+	font-size:22px;
+	background:url(../img/fonds/degrade-bleu.png);
+	background-repeat:repeat-x;
+	color:#FFF;
+}
+
+
+.president_region{
+	border-bottom:1px solid #CCCCCC;
+	padding:5px;
+	font-size:14px;
+
+}
+
+.content_region{
+	border-bottom:1px solid #CCCCCC;
+	padding:5px;
+	font-size:14px;
+}
+
+.liste_cd{
+	border:1px solid #CCCCCC;
+	padding:5px;
+	margin:5px;
+	border-radius : 5px;
+	font-size:12px;
+	
+}
+
+.nb_clubs{
+	border:1px solid #CCCCCC;
+	padding:20px;
+	margin:20px;
+	border-radius : 5px;
+	font-size:14px;
+	clear:both;
+}
+
+.nb_clubs_labels{
+	border:1px solid #CCCCCC;
+	padding:20px;
+	margin-left:160px;
+	margin-right : 20px;
+	border-radius : 5px;
+	font-size:14px;
+	display:block;
+	height:75px;
+	vertical-align:middle;
+	background:url(../img/fonds/degrade-bleu-120px.png);
+	background-repeat:repeat-x;
+	color:#FFF;
+}
+
+
+.nb_clubs_labels a{
+	color:#FFF;
+	font-weight:bold;
+}
+
+.logo-label{
+	border:1px solid #CCCCCC;
+	padding-top:20px;
+	padding-left:20px;
+	margin-left:20px;
+	margin-bottom:20px;
+	border-radius : 5px;
+	float:left;
+	height:95px;
+	vertical-align:middle;
+}
+
+
+
+.clubs_region{
+	border:1px solid #CCCCCC;
+	padding:15px;
+	margin:20px;
+	border-radius : 5px;
+	font-size:14px;
+}
+
+.saisonN{
+font-weight:bold;
+}
+
+
+
+
+.saisonNmoins1{
+
+}
+
+.title{
+	margin-right:70%;
+}
+
+.btn_header{
+	width: 30%;
+
+	vertical-align:middle;
+
+}
+.ajax-btn{
+	padding:3px;
+}
+
+.help{
+	border:1px solid #CCCCCC;
+	border-radius: 5px 5px 5px 5px;
+	padding:5px;
+}
+
+.icone_aide {
+float:left;
+padding-right:10px;
+}
+
+
+
+#droit_utilisateur{
+
+	border-top:1px solid #CCCCCC;
+	border-left:1px solid #CCCCCC;
+	border-right:1px solid #CCCCCC;
+	padding: 3px;
+	font-size: 9px;
+	position:absolute;
+	top : 64px;
+	left : 69.5%;
+	width: 20%;
+
+}
+
+#etat_connexion img {
+	vertical-align: middle;
+	display: inline-block; 
+	}
+	
+#droit_utilisateur img {
+	vertical-align: middle;
+	display: inline-block; 
+	}
+
+#menu_module{
+	font-size: 10px;
+	float: left;
+	width: 15%;
+
+}
+
+.menu_item {
+	border-bottom:1px solid #CCCCCC;
+	padding : 5px;
+	cursor:pointer;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+.menu_item:hover {
+	background-color: #F0F0F0;
+	border-bottom:1px solid #333;
+}
+
+.menu_item img {
+	vertical-align: middle;
+	display: inline-block; 
+	padding-right:10px;
+	}
+
+.menu_titre{
+	border-bottom:1px solid #CCCCCC;
+	padding : 11px;
+	font-size:140%;
+	color:#003d4c;
+	background-color: #F0F0F0;
+
+}
+
+
+#fil_ariane{
+	background-color: #FFFFFF;
+	border-bottom:1px solid #CCCCCC;
+	padding: 5px;
+	font-size: 10px;
+}
+
+
+#footer{
+	font-size: 9px;
+	text-align: center;
+    clear: both;
+	padding: 6px 10px;
+	border-top:1px solid #CCCCCC;
+
+}
+
+#pagination{
+	font-size: 12px;
+	text-align: right;
+    clear: both;
+	padding: 5px;
+	border:1px solid #CCCCCC;
+	border-radius:5px;
+	margin:20px;
+}
+
+.pagination {
+  display: inline-block;
+  padding-left: 0;
+  
+  border-radius: 4px;
+}
+.pagination > li {
+  display: inline;
+}
+.pagination > li > a,
+.pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #428bca;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+  color: #2a6496;
+  background-color: #eee;
+  border-color: #ddd;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  z-index: 2;
+  color: #fff;
+  cursor: default;
+  background-color: #428bca;
+  border-color: #428bca;
+}
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+  color: #999;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ddd;
+}
+.pagination-lg > li > a,
+.pagination-lg > li > span {
+  padding: 10px 16px;
+  font-size: 18px;
+}
+.pagination-lg > li:first-child > a,
+.pagination-lg > li:first-child > span {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.pagination-lg > li:last-child > a,
+.pagination-lg > li:last-child > span {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.pagination-sm > li > a,
+.pagination-sm > li > span {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+.pagination-sm > li:first-child > a,
+.pagination-sm > li:first-child > span {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.pagination-sm > li:last-child > a,
+.pagination-sm > li:last-child > span {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+
+/** containers **/
+div.form,
+div.index,
+div.view {
+	float:right;
+	width:76%;
+	border-left:1px solid #666;
+	padding:10px 2%;
+}
+div.actions {
+	float:left;
+	width:16%;
+	padding:10px 1.5%;
+}
+div.actions h3 {
+	padding-top:0;
+	color:#777;
+}
+
+
+/** Tables **/
+table {
+	border-right:0;
+	clear: both;
+	color: #333;
+	margin-bottom: 10px;
+	width: 100%;
+}
+th {
+	border:0;
+	border-bottom:2px solid #555;
+	text-align: left;
+
+}
+th a {
+	display: block;
+	padding: 2px 4px;
+	text-decoration: none;
+}
+th a.asc:after {
+	content: ' ⇣';
+}
+th a.desc:after {
+	content: ' ⇡';
+}
+table tr td {
+	padding: 2px;
+	text-align: left;
+	vertical-align: middle;
+	border-bottom:1px solid #ddd;
+}
+table tr:nth-child(even) {
+	background: #f9f9f9;
+}
+td.actions {
+	text-align: center;
+	white-space: nowrap;
+}
+table td.actions a {
+	margin: 0px 6px;
+	padding:2px 5px;
+}
+
+
+/* SQL log */
+.cake-sql-log {
+	background: #fff;
+}
+.cake-sql-log td {
+	padding: 4px 8px;
+	text-align: left;
+	font-family:'VAG', Monaco, Consolas, "Courier New", monospaced;
+}
+.cake-sql-log caption {
+	color:#fff;
+}
+
+/** Paging **/
+.paging {
+	background:#fff;
+	color: #ccc;
+	margin-top: 1em;
+	clear:both;
+}
+.paging .current,
+.paging .disabled,
+.paging a {
+	text-decoration: none;
+	padding: 5px 8px;
+	display: inline-block
+}
+.paging > span {
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-left: 0;
+}
+.paging > span:hover {
+	background: #efefef;
+}
+.paging .prev {
+	border-left: 1px solid #ccc;
+	-moz-border-radius: 4px 0 0 4px;
+	-webkit-border-radius: 4px 0 0 4px;
+	border-radius: 4px 0 0 4px;
+}
+.paging .next {
+	-moz-border-radius: 0 4px 4px 0;
+	-webkit-border-radius: 0 4px 4px 0;
+	border-radius: 0 4px 4px 0;
+}
+.paging .disabled {
+	color: #ddd;
+}
+.paging .disabled:hover {
+	background: transparent;
+}
+.paging .current {
+	background: #efefef;
+	color: #c73e14;
+}
+
+/** Scaffold View **/
+dl {
+	line-height: 2em;
+	margin: 0em 0em;
+	width: 60%;
+}
+dl dd:nth-child(4n+2),
+dl dt:nth-child(4n+1) {
+	background: #f4f4f4;
+}
+
+dt {
+	font-weight: bold;
+	padding-left: 4px;
+	vertical-align: top;
+	width: 10em;
+}
+dd {
+	margin-left: 10em;
+	margin-top: -2em;
+	vertical-align: top;
+}
+
+/** Forms **/
+form {
+	clear: both;
+	padding: 0;
+	width: 100%;
+
+}
+fieldset {
+	border: none;
+	margin-bottom: 1em;
+	padding: 16px 10px;
+}
+fieldset legend {
+	color: #e32;
+	font-size: 160%;
+	font-weight: bold;
+}
+fieldset fieldset {
+	margin-top: 0;
+	padding: 10px 0 0;
+}
+fieldset fieldset legend {
+	font-size: 120%;
+	font-weight: normal;
+}
+fieldset fieldset div {
+	clear: left;
+	margin: 0 20px;
+}
+form div {
+	clear: both;
+	margin-bottom: 0 em;
+	vertical-align: text-top;
+}
+form .input {
+	color: #444;
+}
+form .required {
+	font-weight: bold;
+}
+form .required label:after {
+	color: #e32;
+	content: '*';
+	display:inline;
+}
+form div.submit {
+	border: 0;
+	clear: both;
+	margin-top: 10px;
+}
+label {
+	/*display: block;*/
+	margin-bottom:3px;
+	 display:inline-block;
+	 width:22%;
+	 text-align:right;
+}
+input, textarea {
+	/*clear: both;*/
+	font-weight:bold;
+	padding: 0.5%;
+	width:60%;
+	margin-left: 1%;
+	margin-bottom : 1%;
+	border-radius: 5px 5px 5px 5px;
+	border: 1px solid #CCC;
+
+}
+select {
+	clear: both;
+	vertical-align: text-middle;
+	margin-left: 1%;
+	margin-bottom: 15px;
+	width:76%;
+}
+select[multiple=multiple] {
+	width: 100%;
+}
+option {
+	padding: 0 3px;
+}
+input[type=checkbox] {
+	clear: left;
+	float: left;
+	margin: 0px 6px 7px 2px;
+	width: 150px;
+	align:right;
+	  display:inline-block;
+}
+div.checkbox label {
+	display: inline;
+}
+input[type=radio] {
+	float:left;
+	width:auto;
+	margin: 6px 0;
+	padding: 0;
+	line-height: 26px;
+}
+.radio label {
+	margin: 0 0 6px 20px;
+	line-height: 26px;
+}
+input[type=submit] {
+	display: inline;
+	width: 100%;
+}
+
+#bloc_carte_actu form .submit input[type=submit] {
+	background:url(../img/fonds/degrade-bleu.png);
+	background-repeat:repeat-x;
+	border-color: #CCC;
+	color: #FFF;
+	cursor:pointer;
+	font-size:14px;
+}
+
+#bloc_label_1  form .submit input[type=submit] {
+	background:url(../img/fonds/degrade-bleu.png);
+	background-repeat:repeat-x;
+	border-color: #CCC;
+	color: #FFF;
+	cursor:pointer;
+	font-size:14px;
+}
+
+#btnELH {
+	background:url(../img/fonds/degrade-vert.png);
+	background-repeat:repeat-x;
+	border-color: #CCC;
+	cursor:pointer;
+	font-size:14px;
+	border-radius: 5px 5px 5px 5px;
+	border: 1px solid #CCC;
+	margin-top:10px;
+	padding:5px;
+	text-align:center;
+}
+
+#btnELH a {
+	color: #FFF;
+}
+
+#btnCLUB {
+	background:url(../img/fonds/degrade-bleu.png);
+	background-repeat:repeat-x;
+	border-color: #CCC;
+	cursor:pointer;
+	font-size:14px;
+	border-radius: 5px 5px 5px 5px;
+	border: 1px solid #CCC;
+	margin-top:10px;
+	padding:5px;
+	text-align:center;
+}
+
+#btnCLUB a {
+	color: #FFF;
+}
+
+
+
+#bloc_carte_actu form .submit input[type=submit]:hover {
+ 	color:#000;
+ 	background:#FFF;
+ }
+ 
+ .search-personne{
+padding:10px;
+width:94%;
+}
+
+
+form .submit input[type=submit] {
+	background:url(../img/fonds/degrade-bleu.png);
+	background-repeat:repeat-x;
+	border-color: #CCC;
+	color: #FFF;
+	cursor:pointer;
+	letter-spacing:0.1em;
+	font-size:14px;
+}
+form .submit input[type=submit]:hover {
+ 	color:#F0F0F0;
+}
+/* Form errors */
+form .error {
+	background: #FFDACC;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	font-weight: normal;
+}
+form .error-message {
+	-moz-border-radius: none;
+	-webkit-border-radius: none;
+	border-radius: none;
+	border: none;
+	background: none;
+	margin: 0;
+	padding-left: 4px;
+	padding-right: 0;
+}
+form .error,
+form .error-message {
+	color: #9E2424;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-ms-box-shadow: none;
+	-o-box-shadow: none;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+/** Notices and Errors **/
+.message {
+	clear: both;
+	color: #fff;
+	font-size: 140%;
+	font-weight: bold;
+	margin: 0 0 1em 0;
+	padding: 5px;
+}
+
+.success,
+.message,
+.cake-error,
+.cake-debug,
+.notice,
+p.error,
+.error-message {
+	background: #ffcc00;
+	background-repeat: repeat-x;
+	background-image: -moz-linear-gradient(top, #ffcc00, #E6B800);
+	background-image: -ms-linear-gradient(top, #ffcc00, #E6B800);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#ffcc00), to(#E6B800));
+	background-image: -webkit-linear-gradient(top, #ffcc00, #E6B800);
+	background-image: -o-linear-gradient(top, #ffcc00, #E6B800);
+	background-image: linear-gradient(top, #ffcc00, #E6B800);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	margin-bottom: 18px;
+	padding: 7px 14px;
+	color: #404040;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+.success,
+.message,
+.cake-error,
+p.error,
+.error-message {
+	clear: both;
+	color: #fff;
+	background: #c43c35;
+	border: 1px solid rgba(0, 0, 0, 0.5);
+	background-repeat: repeat-x;
+	background-image: -moz-linear-gradient(top, #ee5f5b, #c43c35);
+	background-image: -ms-linear-gradient(top, #ee5f5b, #c43c35);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#ee5f5b), to(#c43c35));
+	background-image: -webkit-linear-gradient(top, #ee5f5b, #c43c35);
+	background-image: -o-linear-gradient(top, #ee5f5b, #c43c35);
+	background-image: linear-gradient(top, #ee5f5b, #c43c35);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+.success {
+	clear: both;
+	color: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.5);
+	background: #3B8230;
+	background-repeat: repeat-x;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#76BF6B), to(#3B8230));
+	background-image: -webkit-linear-gradient(top, #76BF6B, #3B8230);
+	background-image: -moz-linear-gradient(top, #76BF6B, #3B8230);
+	background-image: -ms-linear-gradient(top, #76BF6B, #3B8230);
+	background-image: -o-linear-gradient(top, #76BF6B, #3B8230);
+	background-image: linear-gradient(top, #76BF6B, #3B8230);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+p.error {
+	font-family: 'VAG', Monaco, Consolas, Courier, monospace;
+	font-size: 120%;
+	padding: 0.8em;
+	margin: 1em 0;
+}
+p.error em {
+	font-weight: normal;
+	line-height: 140%;
+}
+.notice {
+	color: #000;
+	display: block;
+	font-size: 120%;
+	padding: 0.8em;
+	margin: 1em 0;
+}
+.success {
+	color: #fff;
+}
+
+/**  Actions  **/
+.actions ul {
+	margin: 0;
+	padding: 0;
+}
+.actions li {
+	margin:0 0 0.5em 0;
+	list-style-type: none;
+	white-space: nowrap;
+	padding: 0;
+}
+.actions ul li a {
+	font-weight: normal;
+	display: block;
+	clear: both;
+}
+
+/* Buttons and button links */
+input[type=submit],
+.actions ul li a,
+.actions a {
+	font-weight:normal;
+	padding: 4px 8px;
+	background: #dcdcdc;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#dcdcdc));
+	background-image: -webkit-linear-gradient(top, #fefefe, #dcdcdc);
+	background-image: -moz-linear-gradient(top, #fefefe, #dcdcdc);
+	background-image: -ms-linear-gradient(top, #fefefe, #dcdcdc);
+	background-image: -o-linear-gradient(top, #fefefe, #dcdcdc);
+	background-image: linear-gradient(top, #fefefe, #dcdcdc);
+	color:#333;
+	border:1px solid #bbb;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	text-decoration: none;
+	text-shadow: #fff 0px 1px 0px;
+	min-width: 0;
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0px 1px 1px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0px 1px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0px 1px 1px rgba(0, 0, 0, 0.2);
+	-webkit-user-select: none;
+	user-select: none;
+}
+.actions ul li a:hover,
+.actions a:hover {
+	background: #ededed;
+	border-color: #acacac;
+	text-decoration: none;
+}
+input[type=submit]:active,
+.actions ul li a:active,
+.actions a:active {
+	background: #eee;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#dfdfdf), to(#eee));
+	background-image: -webkit-linear-gradient(top, #dfdfdf, #eee);
+	background-image: -moz-linear-gradient(top, #dfdfdf, #eee);
+	background-image: -ms-linear-gradient(top, #dfdfdf, #eee);
+	background-image: -o-linear-gradient(top, #dfdfdf, #eee);
+	background-image: linear-gradient(top, #dfdfdf, #eee);
+	text-shadow: #eee 0px 1px 0px;
+	-moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
+	border-color: #aaa;
+	text-decoration: none;
+}
+
+/** Related **/
+.related {
+	clear: both;
+	display: block;
+}
+
+/** Debugging **/
+pre {
+	color: #000;
+	background: #f0f0f0;
+	padding: 15px;
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.cake-debug-output {
+	padding: 0;
+	position: relative;
+}
+.cake-debug-output > span {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	background: rgba(255, 255, 255, 0.3);
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	padding: 5px 6px;
+	color: #000;
+	display: block;
+	float: left;
+	-moz-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(255, 255, 255, 0.5);
+	-webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(255, 255, 255, 0.5);
+	box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(255, 255, 255, 0.5);
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+.cake-debug,
+.cake-error {
+	font-size: 16px;
+	line-height: 20px;
+	clear: both;
+}
+.cake-error > a {
+	text-shadow: none;
+}
+.cake-error {
+	white-space: normal;
+}
+.cake-stack-trace {
+	background: rgba(255, 255, 255, 0.7);
+	color: #333;
+	margin: 10px 0 5px 0;
+	padding: 10px 10px 0 10px;
+	font-size: 120%;
+	line-height: 140%;
+	overflow: auto;
+	position: relative;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+.cake-stack-trace a {
+	text-shadow: none;
+	background: rgba(255, 255, 255, 0.7);
+	padding: 5px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	margin: 0px 4px 10px 2px;
+	font-family: 'VAG', sans-serif;
+	font-size: 14px;
+	line-height: 14px;
+	display: inline-block;
+	text-decoration: none;
+	-moz-box-shadow: inset 0px 1px 0 rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: inset 0px 1px 0 rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0px 1px 0 rgba(0, 0, 0, 0.3);
+}
+.cake-code-dump pre {
+	position: relative;
+	overflow: auto;
+}
+.cake-context {
+	margin-bottom: 10px;
+}
+.cake-stack-trace pre {
+	color: #000;
+	background-color: #F0F0F0;
+	margin: 0px 0 10px 0;
+	padding: 1em;
+	overflow: auto;
+	text-shadow: none;
+}
+.cake-stack-trace li {
+	padding: 10px 5px 0px;
+	margin: 0 0 4px 0;
+	font-family: 'VAG', monospace;
+	border: 1px solid #bbb;
+	-moz-border-radius: 4px;
+	-wekbkit-border-radius: 4px;
+	border-radius: 4px;
+	background: #dcdcdc;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#dcdcdc));
+	background-image: -webkit-linear-gradient(top, #fefefe, #dcdcdc);
+	background-image: -moz-linear-gradient(top, #fefefe, #dcdcdc);
+	background-image: -ms-linear-gradient(top, #fefefe, #dcdcdc);
+	background-image: -o-linear-gradient(top, #fefefe, #dcdcdc);
+	background-image: linear-gradient(top, #fefefe, #dcdcdc);
+}
+/* excerpt */
+.cake-code-dump pre,
+.cake-code-dump pre code {
+	clear: both;
+	font-size: 12px;
+	line-height: 15px;
+	margin: 4px 2px;
+	padding: 4px;
+	overflow: auto;
+}
+.cake-code-dump .code-highlight {
+	display: block;
+	background-color: rgba(255, 255, 0, 0.5);
+}
+.code-coverage-results div.code-line {
+	padding-left:5px;
+	display:block;
+	margin-left:10px;
+}
+.code-coverage-results div.uncovered span.content {
+	background:#ecc;
+}
+.code-coverage-results div.covered span.content {
+	background:#cec;
+}
+.code-coverage-results div.ignored span.content {
+	color:#aaa;
+}
+.code-coverage-results span.line-num {
+	color:#666;
+	display:block;
+	float:left;
+	width:20px;
+	text-align:right;
+	margin-right:5px;
+}
+.code-coverage-results span.line-num strong {
+	color:#666;
+}
+.code-coverage-results div.start {
+	border:1px solid #aaa;
+	border-width:1px 1px 0px 1px;
+	margin-top:30px;
+	padding-top:5px;
+}
+.code-coverage-results div.end {
+	border:1px solid #aaa;
+	border-width:0px 1px 1px 1px;
+	margin-bottom:30px;
+	padding-bottom:5px;
+}
+.code-coverage-results div.realstart {
+	margin-top:0px;
+}
+.code-coverage-results p.note {
+	color:#bbb;
+	padding:5px;
+	margin:5px 0 10px;
+	font-size:10px;
+}
+.code-coverage-results span.result-bad {
+	color: #a00;
+}
+.code-coverage-results span.result-ok {
+	color: #fa0;
+}
+.code-coverage-results span.result-good {
+	color: #0a0;
+}
+
+/** Elements **/
+#url-rewriting-warning {
+	display:none;
+}
+
+

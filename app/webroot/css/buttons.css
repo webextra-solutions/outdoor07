@@ -1,0 +1,60 @@
+.btn2 {
+  
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.30;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-decoration: none !important;
+}
+
+
+.btn2-default {
+  color: #333;
+  display: inline-block;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+.btn2-primary {
+  color: #FFF;
+  display: inline-block;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+
+.btn2-success {
+  color: #FFF;
+  display: inline-block;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+
+.btn2-default:hover{
+  color: #333;
+  background-color: #ebebeb;
+  border-color: #adadad;
+}
+
+
+.btn2-danger {
+  color: #FFF;
+  display: inline-block;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+
+
+

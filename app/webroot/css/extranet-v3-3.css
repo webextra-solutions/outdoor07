@@ -1,0 +1,97 @@
+/**********************************************************************************  FEUILLE DE STYLE - MODULE EVENEMENT ***************************************************************************************/
+
+.module3{
+	color: #FFF;
+	font-size: 10px;
+	float: left;
+	padding: 7px;
+	text-align:center; 
+	width: 90px;
+	height: 84px;
+	background: #104a9a;
+	border-right:1px solid #104a9a;
+}
+
+#sep3{
+	clear: both;
+	background: #104a9a;
+	color: #FFF;
+	padding:15px;
+}
+
+#footer3{
+	font-size: 12px;
+	text-align: center;
+    clear: both;
+	padding: 10px;
+	background: #104a9a;
+	border-top:1px solid #104a9a;
+	color: #FFF;
+}
+
+#header3{
+	background:#104a9a;
+	width:100%;
+	font-size: 350%;
+	color:#FFF;
+	padding: 5px;
+	text-align: center;
+}
+
+#footer3 a {
+	color: #FFF;
+}
+
+.module3 a, .module3 a:hover, .module3 i{
+	color: #FFF;
+}
+
+.menuModuleActive3{
+	background:#258adf;
+}
+
+.nav-pills > li.active > a:hover{
+  color: #fff;
+  background-color: #258adf !important;
+  font-weight: bold;
+}
+
+.panel-module3 {
+  border-color: #104a9a !important;
+}
+.panel-module3 > .panel-heading {
+ 
+  background-color: #b4d9f9;
+  border-color: #104a9a;
+}
+.panel-module3 > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #104a9a;
+}
+.panel-module3 > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #104a9a;
+}
+
+.rech{
+
+	border:2px solid #104a9a !important;
+}
+
+#connect_infos{	
+	border-left: 1px solid #CCC;
+	line-height: 20px;
+	padding:12px 20px 12px 20px;
+	background-color: #104a9a;
+	color: #FFF;
+	height: 84px;
+
+}
+
+#menuTop2{
+	background-color: #f0f7fd;
+	border-bottom:5px solid #104a9a;
+	height: 89px;
+}
+
+
+
+

@@ -1,0 +1,72 @@
+/***************** FEUILLE DE STYLE - MODULE AIDE***************************************************************************************/
+.module8{
+	color: #FFF;
+	
+	font-size: 10px;
+	float: left;
+	padding: 7px;
+	text-align:center; 
+	width: 90px;
+	height: 84px;
+	background: #333;
+	border-left:1px solid #333;
+}
+
+#sep8{
+	clear: both;
+	background: #333;
+	color: #FFF;
+	padding:10px;
+}
+
+#footer8{
+	font-size: 10px;
+	text-align: center;
+    clear: both;
+	padding: 10px;
+	background: #333;
+	border-top:1px solid #CCC;
+	color: #FFF;
+}
+
+#header8{
+	background:#333;
+	width:100%;
+	font-size: 350%;
+	color:#FFF;
+	padding: 10px;
+	text-align: center;
+}
+
+#footer8 a {
+	color: #FFF;
+}
+
+
+
+.module8 a, .module8 a:hover, .module8 i{
+	color: #FFF;
+}
+
+.menuModuleActive8{
+	background:#8a8888;
+}
+
+#connect_infos{	
+	border-left: 1px solid #CCC;
+	line-height: 20px;
+	padding:12px 20px 12px 20px;
+	background-color: #333;
+	color: #FFF;
+	height: 84px;
+
+}
+
+#menuTop2{
+	background-color: #F0F0F0;
+	border-bottom:5px solid #333;
+	height: 89px;
+}
+
+
+

@@ -1,0 +1,1 @@
+ET voilà le text en ajax

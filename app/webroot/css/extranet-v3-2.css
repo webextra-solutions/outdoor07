@@ -1,0 +1,107 @@
+/**********************************************************************************  FEUILLE DE STYLE - MODULE EVENEMENT ***************************************************************************************/
+.module2{
+	color: #FFF;
+	font-size: 10px;
+	float: left;
+	padding: 7px;
+	text-align:center; 
+	width: 90px;
+	height: 84px;
+	background: #0071bd;
+	border-right:1px solid #0071bd;
+}
+
+#sep2{
+	clear: both;
+	background: #0071bd;
+	color: #FFF;
+	padding:10px;
+}
+
+#footer2{
+	font-size: 10px;
+	text-align: center;
+    clear: both;
+	padding: 10px;
+	background: #0071bd;
+	border-top:1px solid #0071bd;
+	color: #FFF;
+}
+
+#header2{
+	background:#0071bd;
+	width:100%;
+	font-size: 350%;
+	color:#FFF;
+	padding: 10px;
+	text-align: center;
+}
+
+.module2 a, .module2 a:hover, .module2 i{
+	color: #FFF;
+}
+
+.menuModuleActive2{
+	background:#78c3f7;
+}
+
+
+.nav-tabs {
+  border-bottom: 2px solid #0071bd !important;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {  
+  border: 2px solid #0071bd !important;
+  background-color: #0071bd !important;
+  color: #FFF !important;
+
+}
+
+#connect_infos{	
+	border-left: 1px solid #CCC;
+	line-height: 20px;
+	padding:12px 20px 12px 20px;
+	background-color: #FFF;
+	color: #333;
+	height: 79px;
+
+}
+
+#menuTop2{
+	background-color: #f3f9fd;
+	border-bottom:5px solid #0071bd;
+	height: 84px;
+}
+
+.panel-module2 {
+  border-color: #0071bd !important;
+}
+.panel-module2 > .panel-heading {
+  color: #FFF;
+  background-color: #0071bd;
+  border-color: #0071bd;
+}
+.panel-module2 > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #0071bd;
+}
+.panel-module2 > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #0071bd;
+}
+
+
+#connect_infos{	
+	
+	line-height: 20px;
+	padding:12px 20px 12px 20px;
+	background-color: #0071bd;
+	color: #FFF;
+	height: 84px;
+
+}
+
+
+
+
+
