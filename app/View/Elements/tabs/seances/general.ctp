@@ -59,6 +59,8 @@
 					if($seance['Seance']['nb_groups'] == 4){$col = 3;}
 					if($seance['Seance']['nb_groups'] == 3){$col = 4;}
 					if($seance['Seance']['nb_groups'] == 2){$col = 6;}
+					if($seance['Seance']['nb_groups'] == 1){$col = 12;}
+
 
 
 					?>

@@ -151,9 +151,9 @@ class SeancesController extends AppController {
 		$this->Paginator->settings = array(
 			'contain' => array('Presents','Encadrants','Prevus'),
 			'limit' => 100,
-			'order' => array('num' => 'DESC'));
+			'order' => array('date' => 'DESC'));
 
-		$this->set('seances', $this->paginate('Seance'));
+		$this->set('seances', $this->paginate('Seance',array('date >=' => '2018-09-01')));
 
 
 
@@ -564,13 +564,14 @@ class SeancesController extends AppController {
 			//debug($this->request->data); die;
 
 
-			$lastNum = $this->Seance->find('first', array('fields' => array('num'),'order' => array('num' => 'DESC')));
+			$lastNum = $this->Seance->find('first', array('fields' => array('num'),'order' => array('date' => 'DESC')));
 
 			$this->request->data['Seance']['num'] = $lastNum['Seance']['num']+1;
+			$this->request->data['Seance']['saison'] = 2019;
 
 			if($this->request->data['Seance']['type_add'] == 1){
 
-				$this->Seance->contain(array('PersonnesSeance'));
+				$this->Seance->contain(array('PersonnesSeance' => array('conditions' => array('active' => 1))));
 				$seance = $this->Seance->findById($this->request->data['Seance']['add_num']);
 
 				$this->request->data['Seance']['besoins_materiels'] = $seance['Seance']['besoins_materiels'];
@@ -627,13 +628,39 @@ class SeancesController extends AppController {
 
 			} else {
 
+				$this->request->data['Seance']['nb_groups'] = 3;
+
 				$this->request->data['Seance']['date_gp1'] = $this->Formatage->dateFRtoUS($this->request->data['Seance']['date']);
 				$this->request->data['Seance']['date_gp2'] = $this->Formatage->dateFRtoUS($this->request->data['Seance']['date']);
 				$this->request->data['Seance']['date_gp3'] = $this->Formatage->dateFRtoUS($this->request->data['Seance']['date']);
 
+				
+				$this->loadModel('Personne');
+				$personnes = $this->Personne->find('all', array(
+					'conditions' => array(
+						'active' => 1,
+						'pratiquant' => 1
+					)
+				));
+
 
 				$this->Seance->create();
 				if ($this->Seance->save($this->request->data)) {
+
+					foreach ($personnes as $row) {
+						$datas = array(
+							'personne_id' => $row['Personne']['id'],
+							'seance_id' => $this->Seance->id,
+							'user_create_id' => $this->request->data['Seance']['user_create_id'],
+							'user_modify_id' => $this->request->data['Seance']['user_modify_id'],
+							'groupe' => 1,
+							'type' => 1
+						);
+						$this->Seance->PersonnesSeance->create();
+						$this->Seance->PersonnesSeance->save($datas);
+					}
+
+
 					$this->Flash('La séance a été ajoutée avec succès !', array('element' => 'success'));
 					$this->redirect(array('action' => 'view', $this->Seance->id, 'general'));
 				} else {
