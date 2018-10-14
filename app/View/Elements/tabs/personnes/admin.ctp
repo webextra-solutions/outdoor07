@@ -1,3 +1,14 @@
+<?= $this->Form->input('active', array(
+    'type' => 'radio',    
+    'before' => '<div><label class="col col-md-4 control-label">Actif</label></div>',
+    'legend' => false,
+    'class' => false,
+    'options' => array(
+      1 => 'Oui',
+      0 => 'Non'  
+    )
+));?>
+<hr/>
 <?= $this->Form->input('encadrant', array(
     'type' => 'radio',    
     'before' => '<div><label class="col col-md-4 control-label">Encadrant</label></div>',
