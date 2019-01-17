@@ -450,7 +450,7 @@ class ListesHelper extends Helper {
 
 		$listNb = array(); 
 		for($i=1;$i <= $nb;$i++) { 
-			$listNb[] = $i;
+			$listNb[$i] = $i;
 		}
 		return $listNb;
 	}
