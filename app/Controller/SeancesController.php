@@ -566,7 +566,8 @@ class SeancesController extends AppController {
 		}
 
 	  
-	    if ($this->request->is(array('post', 'put'))) {	  
+	    if ($this->request->is(array('post', 'put'))) {
+
 	        $this->Seance->id = $id;
 	        if ($this->Seance->save($this->request->data)) {
 

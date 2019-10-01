@@ -108,45 +108,45 @@
 	
 
 
-		<!--<?=$this->Form->input('Seance.sport1_gp1', array( 	 		
-		    'type' => 'select',
-		    'options' => $this->Listes->sports(),
-		    'label' => 'Activité 1',
-		    'empty' => 'sélectionner'
-		));?>
-
-		<?=$this->Form->input('Seance.sport2_gp1', array( 	 		
-		    'type' => 'select',
-		    'options' => $this->Listes->sports(),
-		    'label' => 'Activité 2',
-		    'empty' => 'sélectionner'
-		));?>
-
-
-		
-
-
-		 <?=$this->Form->input('Seance.lieu_rdv', array( 	 		
-		    'type' => 'text',
-		    'placeholder' => 'Ex : Parc de Chavaray - Saint-Peray',
-		    'label' => 'Lieu de départ'
-		));?>
-
-		<hr/>
-
-		<?=$this->Form->input('Seance.besoins_materiels', array(
-		    'placeholder' => 'Ex:',
-		    'label' => 'Matériels nécessaires'
-		));?>
-
-		<hr/> 
-
-		<?=$this->Form->input('Seance.besoins_accompagnateurs', array(
-		    'placeholder' => 'Ex:',
-		    'label' => 'Besoins accompagnateurs'
-		));?>-->
-
-	
+<!--		<!----><?//=$this->Form->input('Seance.sport1_gp1', array(
+//		    'type' => 'select',
+//		    'options' => $this->Listes->sports(),
+//		    'label' => 'Activité 1',
+//		    'empty' => 'sélectionner'
+//		));?>
+<!---->
+<!--		--><?//=$this->Form->input('Seance.sport2_gp1', array(
+//		    'type' => 'select',
+//		    'options' => $this->Listes->sports(),
+//		    'label' => 'Activité 2',
+//		    'empty' => 'sélectionner'
+//		));?>
+<!---->
+<!---->
+<!--		-->
+<!---->
+<!---->
+<!--		 --><?//=$this->Form->input('Seance.lieu_rdv', array(
+//		    'type' => 'text',
+//		    'placeholder' => 'Ex : Parc de Chavaray - Saint-Peray',
+//		    'label' => 'Lieu de départ'
+//		));?>
+<!---->
+<!--		<hr/>-->
+<!---->
+<!--		--><?//=$this->Form->input('Seance.besoins_materiels', array(
+//		    'placeholder' => 'Ex:',
+//		    'label' => 'Matériels nécessaires'
+//		));?>
+<!---->
+<!--		<hr/> -->
+<!---->
+<!--		--><?//=$this->Form->input('Seance.besoins_accompagnateurs', array(
+//		    'placeholder' => 'Ex:',
+//		    'label' => 'Besoins accompagnateurs'
+//		));?><!---->-->
+<!---->
+<!--	-->
 
 
 		

@@ -80,6 +80,11 @@ class AppModel extends Model {
 	        
 	    }
 
+        if (!empty($this->data[$this->alias]['date_gp4']) and $this->data[$this->alias]['date_gp3'] != '0000-00-00 00:00:00') {
+            $this->data[$this->alias]['date_gp4'] = $this->dateFormatBeforeSave($this->data[$this->alias]['date_gp4']);
+
+        }
+
 	    if (!empty($this->data[$this->alias]['ddn']) and $this->data[$this->alias]['ddn'] != '0000-00-00 00:00:00') {
 
 	    	$this->data[$this->alias]['ddn'] = $this->dateFormatBeforeSave($this->data[$this->alias]['ddn']);
@@ -137,6 +142,16 @@ class AppModel extends Model {
 					);
 				}
 			}
+
+            if (isset($val[$this->alias]['date_gp4'])) {
+                if ($val[$this->alias]['date_gp4'] == '1970-01-01 00:00:00') {
+                    $results[$key][$this->alias]['date_gp4'] = '';
+                } else {
+                    $results[$key][$this->alias]['date_gp4'] = $this->dateFormatAfterFind(
+                        $val[$this->alias]['date_gp4']
+                    );
+                }
+            }
 
 			if (isset($val[$this->alias]['ddn'])) {
 				if ($val[$this->alias]['ddn'] == '1970-01-01 00:00:00') {
