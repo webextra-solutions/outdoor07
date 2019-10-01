@@ -273,6 +273,137 @@ class SeancesController extends AppController {
 
 	}
 
+    // LISTE DES NEWS DU MODULE
+    public function indexArchive($id = null) {
+
+        $this->Session->delete('module_id');
+        $this->Session->write('module_id', 2);
+
+        $this->Paginator->settings = array(
+            'contain' => array('Presents','Encadrants','Prevus'),
+            'limit' => 100,
+            'order' => array('date' => 'DESC'));
+
+        $this->set('seances', $this->paginate('Seance',array('date <' => '2019-09-01')));
+
+
+
+        // Liste - SEANCES A VENIR
+        $seancesAvenir = $this->Seance->find('list',array(
+            'conditions' => array(
+                'date >' => date('Y-m-d'),
+                'published' => 1
+            ),
+            'fields' => array('id')));
+
+        // DESTINATIRE DE L'EMAIl EN FONCTON DE LA CIBLE DE LA NEWS
+        $this->loadModel('PersonnesSeance');
+        $destinataires = $this->PersonnesSeance->find('count', array(
+            'conditions' => array(
+                'PersonnesSeance.type' => 1,
+                'PersonnesSeance.seance_id' => current($seancesAvenir),
+                'Personne.email !=' => '',
+                'PersonnesSeance.email' => null
+            ),
+            'contain' => array('Personne'),
+            //fields' => array('Personne.email'),
+            'order' => array('PersonnesSeance.id' => 'ASC')
+        ));
+        $this->set(compact('destinataires'));
+
+
+        // DESTINATIRE DE L'EMAIl EN FONCTON DE LA CIBLE DE LA NEWS
+        $this->loadModel('PersonnesSeance');
+        $destinataires2 = $this->PersonnesSeance->find('count', array(
+            'conditions' => array(
+                'PersonnesSeance.type' => 1,
+                'PersonnesSeance.seance_id' => current($seancesAvenir),
+                'Personne.email !=' => '',
+                'PersonnesSeance.presence' => '',
+                'PersonnesSeance.email_rappel' => null
+            ),
+            'contain' => array('Personne'),
+            //fields' => array('Personne.email'),
+            'order' => array('PersonnesSeance.id' => 'ASC')
+        ));
+        $this->set(compact('destinataires2'));
+
+        /*foreach ($destinataires as $row) {
+
+
+                    $this->loadModel('PersonnesSeance');
+                    //$this->PersonnesSeance->id = $row['PersonnesSeance']['id'];
+                    //$this->PersonnesSeance->save(array('email' => date('Y-m-d H:i')));
+
+                    $this->PersonnesSeance->updateAll(
+
+                        array('PersonnesSeance.email' =>  "'".date('Y-m-d H:i:s')."'"),
+                        array('PersonnesSeance.seance_id' => $seancesAvenir, 'PersonnesSeance.personne_id' => $row['PersonnesSeance']['personne_id'])
+                    );
+
+        }*/
+
+
+
+
+
+
+
+        /*$seances2 = $this->Seance->find('all');
+        $this->loadModel('Personne');
+        $pratiquants = $this->Personne->find('all', array(
+            //'contain' => array('Personne'),
+            'conditions' => array(
+                'pratiquant' => 1
+            )
+        ));
+
+        $this->Seance->query('TRUNCATE table personnes_seances;');
+
+        foreach ($seances2 as $row) {
+
+            foreach ($pratiquants as $row2) {
+
+
+                if($row2['Personne']['civilite'] == 'M'){
+                     $thumb = 'user';
+                 } else {
+                     $thumb = 'woman';
+                 }
+
+                $this->loadModel('PersonnesSeance');
+                $this->PersonnesSeance->create();
+                $this->PersonnesSeance->save(
+                    array(
+                        'personne_id' => $row2['Personne']['id'],
+                        'seance_id' => $row['Seance']['id'],
+                        'type' => 1,
+                        'user_create_id' => 1,
+                        'user_modify_id' => 1,
+                        'groupe' => $row2['Personne']['groupe']
+                    )
+
+                );
+
+
+                $this->loadModel('Personne');
+                $this->Personne->id = $row2['Personne']['id'];
+                $this->Personne->save(
+                    array(
+                        'photo_thumb' => $thumb,
+                        'created' => date('Y-m-d'),
+                        'modified' => date('Y-m-d'),
+                        'user_create_id' => 1,
+                        'user_modify_id' => 1
+                    )
+
+                );
+
+            }
+        }*/
+
+    }
+
 	// METTRE PRESENCE A TOUS
 	public function allPresenceEffective($seance_id) {
 		if (!$this->request->is('post')) {
