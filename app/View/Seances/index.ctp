@@ -71,6 +71,8 @@
         <th></th>
         <th></th>
         <th></th>
+        <th></th>
+        <th></th>
         <th><?php echo $this->Paginator->sort('date', 'DATE'); ?></th>
         <th></th>
         <th></th>
@@ -83,7 +85,7 @@
     <tr class="lienTR">    
         <td width="35" ><div class="gly_gris" data-toggle="tooltip" data-placement="top" title="Effectifs"><span class="gly_gris"><?= count($row['Encadrants']);?></span></td>
         <td width="35" ><div align="center" class="gly_orange" data-toggle="tooltip" data-placement="top" title="Effectifs prévus"><?= count($row['Prevus']);?></div></td>
-        <td width="35" ><div align="center" class="gly_vert" data-toggle="tooltip" data-placement="top" title="Effectifs présents"><?= count($row['Presents']);?></span></td>
+        <td width="35" ><div align="center" class="gly_vert" data-toggle="tooltip" data-placement="top" title="Effectifs présents"><?= count($row['Presents']);?></span></div></td>
         
         <td width="35" ><? if($row['Seance']['published'] == 1 and $this->Formatage->dateUS($row['Seance']['date']) >= date('Y-m-d')){?><div class="gly_vert" data-toggle="tooltip" align="center" data-placement="top" title="Séance publiée"><i class="glyphicons calendar"></i></div><? }?></td>
         <td width="100" class="lien" onclick="document.location='<?= serveur;?>/seances/view/<?= $row['Seance']['id'];?>/personnes'">Séance N°<?= $row['Seance']['num']; ?></td>

@@ -204,7 +204,7 @@
  
    
           <h2>Espace Dirigeants</h2>
-          <h5>Outdoor 07 • Ecole Multisports • Saison 2017/2018</h5><hr/>
+          <h5>Outdoor 07 • Ecole Multisports • Saison 2019/2020</h5><hr/>
             <?= $this->Flash->render();?>
 
         <?= $this->Form->create('User', array(

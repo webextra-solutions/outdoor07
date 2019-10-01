@@ -153,7 +153,7 @@ class SeancesController extends AppController {
 			'limit' => 100,
 			'order' => array('date' => 'DESC'));
 
-		$this->set('seances', $this->paginate('Seance',array('date >=' => '2018-09-01')));
+		$this->set('seances', $this->paginate('Seance',array('date >=' => '2019-09-01')));
 
 
 
@@ -698,7 +698,7 @@ class SeancesController extends AppController {
 			$lastNum = $this->Seance->find('first', array('fields' => array('num'),'order' => array('date' => 'DESC')));
 
 			$this->request->data['Seance']['num'] = $lastNum['Seance']['num']+1;
-			$this->request->data['Seance']['saison'] = 2019;
+			$this->request->data['Seance']['saison'] = $this->Session->read('anneeEnCours');
 
 			if($this->request->data['Seance']['type_add'] == 1){
 
