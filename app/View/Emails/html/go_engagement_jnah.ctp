@@ -16,11 +16,11 @@ DATE LIMITE DE DÉCLARATION D’ENGAGEMENTS DEFINITIFS : <b>17 MARS 2017</b>
 
 RAPPEL DE VOS INFORMATIONS DE CONNEXION<br/>
 <ul>
-	<li>Lien : <a href="<?= serveur;?>/users/login/1">https://extranet.handisport.org/users/login/1</a></li>
+	<li>Lien : <a href="<?= serveur;?>/users/login/1">http://extranet.handisport.org/users/login/1</a></li>
 	<li>Identifiant : <b><?= $username;?></b></li>
 	<li>Mot de passe : Vous l'avez déjà puisque vous connaissez l'extranet ! En cas de perte, cliquez sur "mot de passe oublié" sur la page de connexion à l'extranet.</li>
 </ul>
-
+s
 <hr/>
 <p>EN SAVOIR + SUR L'EVENEMENT </p>
 <ul>

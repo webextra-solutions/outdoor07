@@ -5,7 +5,7 @@ De nouvelles séances sont à venir.<br/>Afin de les préparer au mieux, merci d
 
 On compte sur vous !<br/><br/>
 
-<ul><li>Votre lien direct pour <b><?= $first_name;?></b>  : <a href="https://extranet.raidoutdoor07.fr/seances/presence/<?= $id;?>">https://extranet.raidoutdoor07.fr/seances/presence/<?= $id;?></a> (à mettre dans vos favoris !)<br/><br/></li></ul>
+<ul><li>Votre lien direct pour <b><?= $first_name;?></b>  : <a href="http://extranet.raidoutdoor07.fr/seances/presence/<?= $id;?>">http://extranet.raidoutdoor07.fr/seances/presence/<?= $id;?></a> (à mettre dans vos favoris !)<br/><br/></li></ul>
 
 A très bientôt !<br/>
 L'équipe outdoor 07

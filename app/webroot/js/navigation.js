@@ -1,18 +1,8 @@
 $(function() {
 
+    serveur = 'http://' + window.location.host;
+    serveur2 = 'http://' + window.location.host;
 
-
-
-	if(window.location.host == 'localhost:8888'){
-		serveur = 'https://' + window.location.host;
-		
-	} else  {
-
-		
-			serveur = 'https://' + window.location.host;
-		
-		
-	}
 	
   $('[data-toggle="popover"]').popover({
   	trigger: 'hover'

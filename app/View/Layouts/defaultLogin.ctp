@@ -60,14 +60,14 @@ $cakeDescription = __d('cake_dev', 'Extranet - Outdoor 07');
 		echo $this->Html->script('bootstrap');
 		echo $this->Html->script('bootstrap-datepicker');
 		echo $this->Html->script('locales/bootstrap-datepicker.fr');
-		
-		
-				
 
-		echo $this->Html->script('ui-datepicker');
+    echo $this->Html->script('navigation');
+
+
+    echo $this->Html->script('ui-datepicker');
 		echo $this->Html->script('ui-autocomplete');
 		echo $this->Html->script('ui-dialog');
-		echo $this->Html->script('navigation');		
+
 		echo $this->Html->script('modernizr');
 		
 		// APPEL CSS

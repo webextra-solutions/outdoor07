@@ -123,8 +123,8 @@ define('emailAdmin', 'sameul.ginot@gmail.com');
 if($_SERVER['SERVER_PORT'] == '8888'){
 	define('serveur', 'http://'.$_SERVER['HTTP_HOST'].'/extranet');
 } else {
-	define('serveur', 'https://'.$_SERVER['HTTP_HOST']);
-	define('serveurhttps', 'https://'.$_SERVER['HTTP_HOST']);
+	define('serveur', 'http://'.$_SERVER['HTTP_HOST']);
+	define('serveurhttps', 'http://'.$_SERVER['HTTP_HOST']);
 }
 
 
@@ -148,6 +148,13 @@ CakeLog::config('error', array(
 	'engine' => 'FileLog',
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
+));
+
+CakeLog::config('email_seance', array(
+    'engine' => 'FileLog',
+    'types' => array('warning', 'error', 'info'),
+    'scopes' => array('email_seance'),
+    'file' => 'email_seance',
 ));
 
 setlocale(LC_ALL, 'fra_FRA');

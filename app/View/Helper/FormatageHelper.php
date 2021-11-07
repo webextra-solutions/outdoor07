@@ -6,7 +6,7 @@
 
 
 class FormatageHelper extends Helper {
-	
+
 	// FORMATAGE TELEPHONE
 	public function telef($number = '', $separator = ' ')
 	{
@@ -16,7 +16,7 @@ class FormatageHelper extends Helper {
 			$chunks[] = substr($number, $i, 2);
 		}
 		return implode($separator, $chunks);
-	
+
 	}
 
 
@@ -29,15 +29,15 @@ class FormatageHelper extends Helper {
 	// FORMATAGE DATE FR -> DATE US
 	public function dateUS($date){
 
-		return date('Y-m-d', strtotime(str_replace('/', '-',$date)));   
+		return date('Y-m-d', strtotime(str_replace('/', '-',$date)));
 	}
 
 	// FORMATAGE DATE FR -> DATE US
 	public function dateUShr($date){
 
-		return date('Y-m-d H:i', strtotime(str_replace('/', '-',$date)));   
+		return date('Y-m-d H:i', strtotime(str_replace('/', '-',$date)));
 	}
-	
+
 	// FORMATAGE DATE US -> DATE FR
 	public function dateFR($dateUS){
 		if($dateUS == '0000-00-00 00:00:00' or $dateUS == '1970-01-01'){
@@ -53,12 +53,12 @@ class FormatageHelper extends Helper {
 			return '';
 		} else {
 
-			
+
 			$JoursFR = array('', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche');
 
 			return $JoursFR[date('N', strtotime($dateUS))];
 		}
-	}	
+	}
 
 	// FORMATAGE DATE US -> DATE FR
 	public function dateFRBis2($dateUS){
@@ -66,7 +66,7 @@ class FormatageHelper extends Helper {
 			return '';
 		} else {
 
-			
+
 			$JoursFR = array('', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche');
 			$MoisFR = array('', 'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre');
 
@@ -80,20 +80,20 @@ class FormatageHelper extends Helper {
 			return '';
 		} else {
 
-			
+
 			$JoursFR = array('', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche');
 			$MoisFR = array('', 'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre');
 
 			return $JoursFR[date('N', strtotime($dateUS))].' '.date('d', strtotime($dateUS)).' '.$MoisFR[date('n', strtotime($dateUS))];
 		}
-	}	
-	
+	}
+
 		// FORMATAGE DATE US -> DATE FR avec YEAR petit
 	public function dateFRy($dateUS){
 		return date('d/m/y', strtotime($dateUS));
-	}	
+	}
 
-	
+
 	// FORMATAGE DATE et HEURE US -> DATE FR
 	public function datehrFR($dateUS){
 		return date('d/m/Y à H:i', strtotime($dateUS));
@@ -120,14 +120,14 @@ class FormatageHelper extends Helper {
 		// Lecture de la taille du fichier
 		$taille = filesize($fichier);
 		// Conversion en Go, Mo, Ko
-		if ($taille >= 1073741824) 
+		if ($taille >= 1073741824)
 		{ $taille = round($taille / 1073741824 * 100) / 100 . " Go"; }
-		elseif ($taille >= 1048576) 
+		elseif ($taille >= 1048576)
 		{ $taille = round($taille / 1048576 * 100) / 100 . " Mo"; }
-		elseif ($taille >= 1024) 
+		elseif ($taille >= 1024)
 		{ $taille = round(round($taille / 1024 * 100) / 100,0) . " Ko"; }
 		else
-		{ $taille = $taille . " o"; } 
+		{ $taille = $taille . " o"; }
 		if($taille==0) {$taille="-";}
 		return $taille;
 	}
@@ -147,10 +147,10 @@ class FormatageHelper extends Helper {
 					10 => 'Disponibilité des locaux',
 					11 => 'Pas d\'organisateur',
 					12 => 'Autre'
-		);		
+		);
 		return $motifs[$data];
 	}
-	
+
 	// Jour et Mois en Français
 	public function dateFR2(){
 		$JoursFR = array('', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche');
@@ -158,20 +158,20 @@ class FormatageHelper extends Helper {
 		return $JoursFR[date('N')].' '.date('d').' '.$MoisFR[date('n')].' '.date('Y');
 	}
 
-	
-	
+
+
 	// Jour et Mois en Français
-	public function dateFR3($data, $id){		
+	public function dateFR3($data, $id){
 		if($data == 'MoisFR'){
 			$MoisFR = array('', 'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre');
 			return $MoisFR[$id];
 		}
-		
+
 		if($data == 'MoisFRCAP'){
 			$MoisFRCAP = array('', 'JANVIER', 'FÉVRIER', 'MARS', 'AVRIL', 'MAI', 'JUIN', 'JUILLET', 'AOÛT', 'SEPTEMBRE', 'OCTOBRE', 'NOVEMBRE', 'DÉCEMBRE');
 			return $MoisFRCAP[$id];
 		}
-		
+
 		if($data == 'MoisINIFR'){
 			$MoisINIFR = array('', 'Janv', 'Fév', 'Mars', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sept', 'Oct', 'Nov', 'Déc');
 			return $MoisINIFR[$id];
@@ -182,28 +182,28 @@ class FormatageHelper extends Helper {
 			return $MoisINIFRCAP[$id];
 		}
 	}
-	
+
 	// Enlever les accents
 	function noACCENT($string){
 		return strtr(utf8_encode($string),' àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ',
-	'-aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY'); 
+	'-aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY');
 	}
 
 	// CREATION USERNAME
 	function username($prenom, $nom){
 		return strtoupper(substr(strtr(utf8_encode($prenom),' àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ','-aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY'),0,1).'.'.
-		strtr(utf8_encode($nom),' àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ','-aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY')); 
+		strtr(utf8_encode($nom),' àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ','-aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY'));
 	}
 
 	// CREATION USERNAME avec tiret au lieu du point
 	function username2($prenom, $nom){
 		return strtoupper(substr(strtr(utf8_encode($prenom),' àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ','-aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY'),0,1).'-'.
-		strtr(utf8_encode($nom),' àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ','-aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY')); 
+		strtr(utf8_encode($nom),' àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ','-aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY'));
 	}
 
 	// DATES CALENDRIER
-	public function dateCalendar2($debut, $fin){	
-		
+	public function dateCalendar2($debut, $fin){
+
 		$debut = date('Y-m-d', strtotime(str_replace('/', '-',$debut)));
 		$fin = date('Y-m-d', strtotime(str_replace('/', '-',$fin)));
 
@@ -212,7 +212,7 @@ class FormatageHelper extends Helper {
 			' <i class="glyphicons chevron-right"></i> '.
 			strftime('%d %b %Y', mktime(0,0,0,date('n',strtotime($fin)),date('d',strtotime($fin)),date('Y',strtotime($fin))));
 		}
-		
+
 		if(date('Y', strtotime($debut)) == date('Y', strtotime($fin))){
 			if($debut == $fin){
 				return strftime('%d %b %Y', mktime(0,0,0,date('n',strtotime($debut)),date('d',strtotime($debut))));
@@ -226,10 +226,10 @@ class FormatageHelper extends Helper {
 
 
 	// DATES CALENDRIER
-	public function dateCalendar($debut, $fin){	
+	public function dateCalendar($debut, $fin){
 
 		$Mois = array('', 'Janv', 'Fév', 'Mars', 'Avr', 'Mai', 'Juin', 'Juil', 'août', 'sep', 'oct', 'nov', 'déc');
-		
+
 		$debut = date('Y-m-d', strtotime(str_replace('/', '-',$debut)));
 		$fin = date('Y-m-d', strtotime(str_replace('/', '-',$fin)));
 
@@ -238,7 +238,7 @@ class FormatageHelper extends Helper {
 			' <i class="glyphicons chevron-right" style="color:#666;"></i>'.
 			date('d', strtotime($fin)).' '.$Mois[date('n', strtotime($fin))].' '.date('y', strtotime($fin));
 		}
-		
+
 		if(date('Y', strtotime($debut)) == date('Y', strtotime($fin))){
 			if($debut == $fin){
 				return date('d', strtotime($debut)).' '.$Mois[date('n', strtotime($debut))];
@@ -257,10 +257,10 @@ class FormatageHelper extends Helper {
 	}
 
 	// DATES CALENDRIER
-	public function dateCalendar3($debut, $fin){	
+	public function dateCalendar3($debut, $fin){
 
 		$Mois = array('', 'Janv', 'Fév', 'Mars', 'Avr', 'Mai', 'Juin', 'Juil', 'août', 'sep', 'oct', 'nov', 'déc');
-		
+
 		$debut = date('Y-m-d', strtotime(str_replace('/', '-',$debut)));
 		$fin = date('Y-m-d', strtotime(str_replace('/', '-',$fin)));
 
@@ -269,7 +269,7 @@ class FormatageHelper extends Helper {
 			' <i class="glyphicons chevron-right" style="color:#666;"></i> '.
 			date('d', strtotime($fin)).' '.$Mois[date('n', strtotime($fin))];
 		}
-		
+
 		if(date('Y', strtotime($debut)) == date('Y', strtotime($fin))){
 			if($debut == $fin){
 				return date('d', strtotime($debut)).' '.$Mois[date('n', strtotime($debut))].' '.date('Y', strtotime($debut));
@@ -282,10 +282,10 @@ class FormatageHelper extends Helper {
 	}
 
 	// DATES CALENDRIER
-	public function dateCalendar4($debut, $fin){	
+	public function dateCalendar4($debut, $fin){
 
 		$Mois = array('', 'Janv', 'Fév', 'Mars', 'Avr', 'Mai', 'Juin', 'Juil', 'août', 'sep', 'oct', 'nov', 'déc');
-		
+
 		$debut = date('Y-m-d', strtotime(str_replace('/', '-',$debut)));
 		$fin = date('Y-m-d', strtotime(str_replace('/', '-',$fin)));
 
@@ -294,7 +294,7 @@ class FormatageHelper extends Helper {
 			' <i class="glyphicons chevron-right" style="color:#666;"></i> '.
 			date('d', strtotime($fin)).' '.$Mois[date('n', strtotime($fin))];
 		}
-		
+
 		if(date('Y', strtotime($debut)) == date('Y', strtotime($fin))){
 			if($debut == $fin){
 				return date('d', strtotime($debut));
@@ -308,46 +308,46 @@ class FormatageHelper extends Helper {
 
 
 	// Niveau Géo
-	public function niveauGeo($data){		
+	public function niveauGeo($data){
 			$niveau = array(0 => 'Non défini', 1 => 'Départemental', 2 => '', 3 => 'Régional', 4 => 'Inter-régional', 5 => 'National', 6 => 'europe','7' => 'monde','8' => 'international (Hors Europe/ Monde)');
-			return $niveau[$data];		
+			return $niveau[$data];
 	}
 
 
-	
+
 	// Type de Licence
-	public function typeLicence($data){		
+	public function typeLicence($data){
 			$licence = array('C' => 'Compétition', 'L' => 'Loisir', 'D' => 'Cadre', 'F' => 'Cadre fédérale', 'E' => 'Etablissement');
 			return $licence[$data];
-		
+
 	}
 
 	// Type de Licence
-	public function typeSession($data){		
+	public function typeSession($data){
 			$typeSession = array(1 => 'Mono-modulaire', 2 => 'Multi-modulaire', 3 => 'Diplômante' );
 			return $typeSession[$data];
-		
+
 	}
 
 	// Mois + Année - ONGELET MOIS CALENDREIR A VENIR
-	public function moisOnglet($data){		
+	public function moisOnglet($data){
 			$Mois = array('', 'JANVIER', 'FÉVRIER', 'MARS', 'AVRIL', 'MAI', 'JUIN', 'JUILLET', 'AOÛT', 'SEPTEMBRE', 'OCTOBRE', 'NOVEMBRE', 'DÉCEMBRE');
 			return $Mois[date('n', strtotime($data))].' '.date('Y', strtotime($data));
-		
+
 	}
 
 	// LISTE DEROULANTE de CHIFFRES
 	public function genererListeNb($nb){
 
-		$listNb = array(); 
-		for($i=0;$i <= $nb;$i++) { 
+		$listNb = array();
+		for($i=0;$i <= $nb;$i++) {
 			$listNb[] = $i;
 		}
 		return $listNb;
 	}
 
 	// Liste des catégories de docuement pour les sessions de formation
-	public function categDocFsession($data = null){	
+	public function categDocFsession($data = null){
 
 		$liste = array(1 => 'Planning', 2 => 'Autre');
 
@@ -355,8 +355,8 @@ class FormatageHelper extends Helper {
 			return $liste[$data];
 		} else {
 			return $liste;
-		}			
-		
+		}
+
 	}
 
 	public function get_lundi_vendredi_from_week($week,$year,$format="d/m/Y") {
@@ -454,8 +454,8 @@ class FormatageHelper extends Helper {
 
 		$SaisonAnnee2 = ($SaisonAnnee-1).'/'.$SaisonAnnee;
 
-		App::import("Model", $modelName); 
-		$model = new $modelName();  
+		App::import("Model", $modelName);
+		$model = new $modelName();
 		$find = $model->find('count', array(
 			'fields' => array('id', 'sport'),
 			'conditions' => array('SaisonAnnee' => $SaisonAnnee, 'structure_id' => $structure_id)
@@ -466,7 +466,7 @@ class FormatageHelper extends Helper {
 		} else {
 			return '<span class="label label-danger">non Affilié</span>';
 		}
-	
+
 	}
 
 
@@ -476,12 +476,12 @@ class FormatageHelper extends Helper {
 		} else{
 			return '<i class="glyphicons woman"></i>';
 		}
-	
+
 	}
 
 	public function verifDocAdmin($id, $modelName = 'ParticipantsDoc') {
-		App::import("Model", $modelName); 
-		$model = new $modelName();  
+		App::import("Model", $modelName);
+		$model = new $modelName();
 		$find = $model->find('count', array(
 			'fields' => array('id'),
 			'conditions' => array(
@@ -494,12 +494,12 @@ class FormatageHelper extends Helper {
 		} else{
 			return '<i class="glyphicons hourglass" title="Docs administratifs incomplets"></i>';
 		}
-	
+
 	}
 
 	public function verifEpreuve($id, $nbEpr, $modelName = 'ParticipantsEpreuve') {
-		App::import("Model", $modelName); 
-		$model = new $modelName();  
+		App::import("Model", $modelName);
+		$model = new $modelName();
 		$find = $model->find('count', array(
 			'fields' => array('id'),
 			'conditions' => array(
@@ -507,18 +507,18 @@ class FormatageHelper extends Helper {
 				)
 		));
 		if($find >= $nbEpr){
-			
+
 			return '<i class="glyphicons ok" title="Epreuve(s) OK"></i>';
 		} else{
-			
+
 			return '<i class="glyphicons hourglass" title="Epreuve(s) manquant(s)"></i>';
 		}
-	
+
 	}
 
 	public function verifEpreuve2($id, $nbEpr, $modelName = 'ParticipantsEpreuve') {
-		App::import("Model", $modelName); 
-		$model = new $modelName();  
+		App::import("Model", $modelName);
+		$model = new $modelName();
 		$find = $model->find('count', array(
 			'fields' => array('id'),
 			'conditions' => array(
@@ -526,21 +526,21 @@ class FormatageHelper extends Helper {
 				)
 		));
 		if($find >= $nbEpr){
-			
+
 			return 0;
 		} else{
-			
+
 			return 1;
 		}
-	
+
 	}
 
 	public function verifFullTeam($id,$events_epreuve_id) {
 
 		$modelName1 = 'EventsEpreuve';
 		App::import("Model", $modelName1);
-		$model1 = new $modelName1();  
-		 
+		$model1 = new $modelName1();
+
     	$epreuve = $model1->find('first',array(
     		'conditions' => array(
     			'id' => $events_epreuve_id,
@@ -548,8 +548,8 @@ class FormatageHelper extends Helper {
     	));
 
     	$modelName2 = 'DelegationsEquipesParticipant';
-		App::import("Model", $modelName2); 
-		$model2 = new $modelName2();  
+		App::import("Model", $modelName2);
+		$model2 = new $modelName2();
 
 		$find = $model2->find('count', array(
 			'fields' => array('id'),
@@ -558,13 +558,13 @@ class FormatageHelper extends Helper {
 				)
 		));
 		if($find < $epreuve['EventsEpreuve']['nb_min_team']){
-			
+
 			return 1;
 		} else{
-			
+
 			return 0;
 		}
-	
+
 	}
 
 
@@ -572,8 +572,8 @@ class FormatageHelper extends Helper {
 
 		$modelName1 = 'EventsEpreuve';
 		App::import("Model", $modelName1);
-		$model1 = new $modelName1();  
-		 
+		$model1 = new $modelName1();
+
     	$epreuve = $model1->find('first',array(
     		'conditions' => array(
     			'id' => $events_epreuve_id,
@@ -581,8 +581,8 @@ class FormatageHelper extends Helper {
     	));
 
     	$modelName2 = 'DelegationsEquipe';
-		App::import("Model", $modelName2); 
-		$model2 = new $modelName2();  
+		App::import("Model", $modelName2);
+		$model2 = new $modelName2();
 
 		$find = $model2->find('count', array(
 			'fields' => array('id'),
@@ -592,29 +592,29 @@ class FormatageHelper extends Helper {
 				)
 		));
 
-		
+
 
 		if($find != 0){
-			
+
 			return 1;
 		} else{
-			
+
 			return 0;
 		}
-	
+
 	}
 
 
-	public function ddnMax($age,$event_debut) {	
+	public function ddnMax($age,$event_debut) {
 		$date = new DateTime($event_debut); $interval = new DateInterval('P'.$age.'Y');
-		$date->sub($interval); 
+		$date->sub($interval);
 		return $date->format('Y-m-d');
 	}
 
 
 	public function verifChampParticipant($champ, $modelName, $delegation_id, $conditions) {
-		App::import("Model", $modelName); 
-		$model = new $modelName();  
+		App::import("Model", $modelName);
+		$model = new $modelName();
 		$find = $model->find('count', array(
 			'fields' => array('id'),
 			'conditions' => array(
@@ -623,7 +623,7 @@ class FormatageHelper extends Helper {
 			)
 		));
 		return $find;
-	
+
 	}
 
 
@@ -634,15 +634,15 @@ class FormatageHelper extends Helper {
 		} else {
 			return '';
 		}
-	}	
+	}
 
 
 	public function verifPersonne($nom_indiv,$prenom_indiv, $modelName = 'Personne') {
 
-		
 
-		App::import("Model", $modelName); 
-		$model = new $modelName();  
+
+		App::import("Model", $modelName);
+		$model = new $modelName();
 		$find = $model->find('list', array(
 			'fields' => array('id'),
 			'conditions' => array('PersonneNom' => $nom_indiv, 'PersonnePrenom' => $prenom_indiv)
@@ -653,15 +653,15 @@ class FormatageHelper extends Helper {
 		} else {
 			return '';
 		}
-	
+
 	}
 
 	public function verifPersonne2($nom_indiv,$prenom_indiv, $modelName = 'Personne') {
 
-		
 
-		App::import("Model", $modelName); 
-		$model = new $modelName();  
+
+		App::import("Model", $modelName);
+		$model = new $modelName();
 		$find = $model->find('list', array(
 			'fields' => array('id','AdresseMail'),
 			'conditions' => array('PersonneNom' => $nom_indiv, 'PersonnePrenom' => $prenom_indiv)
@@ -672,16 +672,16 @@ class FormatageHelper extends Helper {
 		} else {
 			return '';
 		}
-	
+
 	}
 
 
 	public function verifPersonne3($nom_indiv,$ddn_indiv, $modelName = 'Personne') {
 
-		
 
-		App::import("Model", $modelName); 
-		$model = new $modelName();  
+
+		App::import("Model", $modelName);
+		$model = new $modelName();
 		$find = $model->find('all', array(
 			'fields' => array('id','PersonneNom','PersonnePrenom','PersonneDdn'),
 			'conditions' => array('PersonneNom' => $nom_indiv, 'PersonneDdn' => $ddn_indiv)
@@ -695,19 +695,19 @@ class FormatageHelper extends Helper {
 			}
 
 			return $result;
-			
+
 		} else {
 			return '';
 		}
-	
+
 	}
 
 	public function verifPersonne4($nom_indiv,$prenom_indiv, $modelName = 'Personne') {
 
-		
 
-		App::import("Model", $modelName); 
-		$model = new $modelName();  
+
+		App::import("Model", $modelName);
+		$model = new $modelName();
 		$find = $model->find('all', array(
 			'fields' => array('id','PersonneNom','PersonnePrenom','PersonneDdn'),
 			'conditions' => array('PersonneNom' => $nom_indiv, 'PersonnePrenom' => $prenom_indiv)
@@ -721,16 +721,16 @@ class FormatageHelper extends Helper {
 			}
 
 			return $result;
-			
+
 		} else {
 			return '';
 		}
-	
+
 	}
 
 	public function verifPersonne5($nom_indiv,$prenom_indiv,$ddn_indiv, $modelName = 'Personne') {
-		App::import("Model", $modelName); 
-		$model = new $modelName();  
+		App::import("Model", $modelName);
+		$model = new $modelName();
 		$find = $model->find('all', array(
 			'fields' => array('id','PersonneNom','PersonnePrenom','PersonneDdn'),
 			'conditions' => array('PersonneNom' => $nom_indiv,'PersonnePrenom' => $prenom_indiv, 'PersonneDdn' => $ddn_indiv)
@@ -744,15 +744,15 @@ class FormatageHelper extends Helper {
 			}
 
 			return $result;
-			
+
 		} else {
 			return '';
 		}
-	
+
 	}
 
 
-	
+
 
 
 	function dateDiff($date1, $date2){
@@ -762,19 +762,19 @@ class FormatageHelper extends Helper {
 
 	    $diff = abs($date1 - $date2); // abs pour avoir la valeur absolute, ainsi éviter d'avoir une différence négative
 	    $retour = array();
-	 
+
 	    $tmp = $diff;
 	    $retour['second'] = $tmp % 60;
-	 
+
 	    $tmp = floor( ($tmp - $retour['second']) /60 );
 	    $retour['minute'] = $tmp % 60;
-	 
+
 	    $tmp = floor( ($tmp - $retour['minute'])/60 );
 	    $retour['hour'] = $tmp % 24;
-	 
+
 	    $tmp = floor( ($tmp - $retour['hour'])  /24 );
 	    $retour['day'] = $tmp;
-	 
+
 	    return $retour['day']+1;
 	}
 
@@ -787,20 +787,33 @@ class FormatageHelper extends Helper {
 		 } else {
 		 	return $thumb;
 		 }
-	
+
 	}
 
 	public function genererNumDiplome($stagiaire_id,$fsession_id,$diplome_id) {
-		App::import("Model", 'Diplome'); 
-		$model = new Diplome();  
+		App::import("Model", 'Diplome');
+		$model = new Diplome();
 		$find = $model->findById($diplome_id);
 
-		App::import("Model2", 'Fsession'); 
-		$model2 = new Fsession();  
-		$find2 = $model2->findById($fsession_id);	
+		App::import("Model2", 'Fsession');
+		$model2 = new Fsession();
+		$find2 = $model2->findById($fsession_id);
 		return $find['Diplome']['code'].'-'.$find['Diplome']['dipSportCode'].'-'.$fsession_id.'-'.$find2['Fsession']['year_min_date'].'-'.$stagiaire_id;
-		
-	
+
+
+	}
+
+
+	// Saison en cours
+	public function currentSeason(){
+
+		if(date('n') >= 9){
+			$current_season = date('Y').'/'.(date('Y')+1);
+		} else {
+			$current_season = (date('Y')-1).'/'.date('Y');
+		}
+		return $current_season;
+
 	}
 
 

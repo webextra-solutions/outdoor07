@@ -1,15 +1,5 @@
 $(function() {
 
-
-
-
-		serveur = 'https://' + window.location.host;
-		serveur2 = 'https://' + window.location.host;
-
-
-		
-	
-
 	// Recherche Structure
 	$('.search-structure').autocomplete({
 		minLength    : 3,

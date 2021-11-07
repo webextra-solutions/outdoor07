@@ -27,6 +27,8 @@ $cakeDescription = __d('cake_dev', 'Extranet Outddor 07');
 <head>
 
 
+
+
 	<?php echo $this->Html->charset(); ?>
 	<title>
 		<?php echo $cakeDescription; ?>
@@ -65,13 +67,8 @@ $cakeDescription = __d('cake_dev', 'Extranet Outddor 07');
 		echo $this->Html->script('jquery.metadata.js');
 		echo $this->Html->script('additional-methods.js');
 		
-		
-
-	
-
 
 		echo $this->Html->script('navigation');
-
 		echo $this->Html->script('ui-datepicker');
 		echo $this->Html->script('ui-autocomplete');
 		echo $this->Html->script('ui-dialog');
@@ -110,15 +107,14 @@ $cakeDescription = __d('cake_dev', 'Extranet Outddor 07');
 	?>
 
 
-<script type="text/javascript">
-    $(function() {
 
-    	$('#wait_save').hide();
-	
-              
-    });
-</script>
+    <script type="text/javascript">
+        $(function() {
 
+            $('#wait_save').hide();
+
+        });
+    </script>
 
 
 

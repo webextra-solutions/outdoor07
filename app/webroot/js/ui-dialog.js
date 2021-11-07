@@ -1,12 +1,6 @@
 $(function() {
 
 
-	
-		serveur = 'https://' + window.location.host;
-		
-	
-
-
 	// AJOUTER UN ITEM
     $( ".dialog-addItem" ).dialog({
     	modal:true,

@@ -4,24 +4,24 @@
         $(function() {
 
 
-       
+
           // RECHERCHER UN ENFANT
         $('.search-child').autocomplete({
           minLength    : 1,
           source        : serveur+'/personnes/searchChild',
 
-          select: function(event, ui) { 
+          select: function(event, ui) {
             window.location.href = serveur+'/seances/presence/'+ui.item.id;
           }
         });
 
 
-          
-       
 
 
 
-       
+
+
+
         });
     </script>
 
@@ -36,7 +36,7 @@
             <tr><td style="padding-right: 2%;" width="100px;"><?= $this->Html->Image('logos/logo_outdoor.png', array('width' => 68)); ?></td>
 
          <td style="width: 100%;"> <h1>Espace Parents</h1>
-          <h4>Ecole Multisports • Outdoor 07 • Saison 2019/2020</h4></td>
+          <h4>Ecole Multisports • Outdoor 07 • Saison <?php echo $this->Formatage->current_season();?>></h4></td>
           <td  align="center" style="font-size:80%;" class="lien" onclick="document.location='<?= serveur;?>/users/login'"><br/><br/><i class="glyphicons exit x3"></i><br/>Espace Dirigeants</td></tr></table>
 
 </div>
@@ -49,13 +49,13 @@
   <span class="gly_gris" style="padding: 1%;"><b>1</b></span> Rechercher votre enfant, ci-dessous<br/><br/>
 <span class="gly_gris" style="padding: 1%;"><b>2</b></span> Retrouver ainsi les séances à venir (modalités pratiques, lieux de rdv, ...)<br/><br/>
 <span class="gly_gris" style="padding: 1%;"><b>3</b></span> Renseignez la présence de vos enfants sur les séances à venir
-</h5>  
+</h5>
 
 <hr/>
 
  <?= $this->Form->input('search-enfant', array(
-      'label' => false, 'placeholder' => 'Votre enfant...', 
-      'type' => 'text', 
+      'label' => false, 'placeholder' => 'Votre enfant...',
+      'type' => 'text',
       'class' => 'form-control input-md search-child',
       'afterInput' => '<span class="help-block" style="font-size:80%;">Tapez les première lettre du nom de votre enfant, puis sélectionnez dans la liste</span>'
 
@@ -67,7 +67,7 @@
 <div class="col-md-6 col-md-offset-1" >
 
 
-  
+
 
 
 
@@ -94,7 +94,7 @@
             <? } else {?>
               $('#statut_accomp_<?= $row['PersonnesSeance']['id'];?>').show();
             <? }?>
-      
+
             $('#PersonnesSeanceAccompagnement_<?= $row['PersonnesSeance']['id'];?>').change(function(){
 
               var selected = $(this).val();
@@ -111,21 +111,21 @@
                   'data[PersonnesSeance][personne_id]': {required:true},
                   'data[PersonnesSeance][presence]': {required:true},
                   'data[PersonnesSeance][accompagnement]': {required:true},
-                  
+
                 },
                 submitHandler: function(form) {
-                    
-                      form.submit();          
-                
-                  
+
+                      form.submit();
+
+
                 }
             });
 
-         
+
           });
       </script>
 
-    
+
        <div class="bloc_1 row" style="margin-bottom: 2%; <? if($row['PersonnesSeance']['presence'] == 2){?>border-left: 4px solid #F00;<? } else {?> border-left: 4px solid #0ed313;<? }?>" >
 
           <!-- TITRE -->
@@ -163,12 +163,12 @@
 
           <!-- Bloc DROITE -->
           <div class="col-md-5" style="font-size: 90%;">
-              
+
             <?= $this->Form->create('Seance', array(
               'id'=>'SavePresence',
               'novalidate' => true,
               'inputDefaults' => array(
-                  'div' => 'form-group',             
+                  'div' => 'form-group',
                   'class' => 'form-control input-sm'
               )
             )); ?>
@@ -177,7 +177,7 @@
             <?= $this->Form->hidden('PersonnesSeance.personne_id', array('value' => $row['PersonnesSeance']['personne_id']));?>
             <?= $this->Form->input('PersonnesSeance.presence', array(
               'options' => array(1 => 'Présent', 2 => 'Absent'),
-              'empty' => 'Sélectionnez', 
+              'empty' => 'Sélectionnez',
               'label' => 'Votre enfant sera',
               'div' => 'required',
               'value' => $row['PersonnesSeance']['presence']
@@ -186,7 +186,7 @@
 
             <?= $this->Form->input('PersonnesSeance.accompagnement', array(
               'options' => array(1 => 'Oui', 2 => 'Non'),
-              'empty' => 'Sélectionnez', 
+              'empty' => 'Sélectionnez',
               'label' => 'Vous souhaitez être "Parent accompagnateur sur cette séance"',
               'div' => 'required',
               'value' => $row['PersonnesSeance']['accompagnement'],
@@ -197,18 +197,18 @@
             <div id="statut_accomp_<?= $row['PersonnesSeance']['id'];?>"?>
               <?= $this->Form->input('PersonnesSeance.statut_accompagnateur', array(
                 'options' => array(1 => 'Papa', 2 => 'Maman',3 => 'Frère', 4 => 'Soeur'),
-                'empty' => 'Sélectionnez', 
+                'empty' => 'Sélectionnez',
                 'label' => 'Vous êtes le/la :',
                 'value' => $row['PersonnesSeance']['statut_accompagnateur'],
                 'div' => 'required'
               ));
-              ?> <br/>   
+              ?> <br/>
             </div>
 
             <? if($row['Seance']['active_others_persons'] == 1){?>
                <?= $this->Form->input('PersonnesSeance.nb_others_persons', array(
                 'options' => $this->Listes->genererListeNb(5),
-                'empty' => 'Sélectionnez', 
+                'empty' => 'Sélectionnez',
                 'label' => 'Vous souhaitez profiter du transport pour d\'autres personnes?',
                 'div' => 'required',
                 'value' => $row['PersonnesSeance']['nb_others_persons'],
@@ -231,8 +231,8 @@
 
       </div>
 
-        
-   
+
+
     <? }?>
 
 </div>
@@ -241,4 +241,3 @@
 
 
 
-    
