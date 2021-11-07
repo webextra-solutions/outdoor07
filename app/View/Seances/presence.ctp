@@ -36,7 +36,7 @@
             <tr><td style="padding-right: 2%;" width="100px;"><?= $this->Html->Image('logos/logo_outdoor.png', array('width' => 68)); ?></td>
 
          <td style="width: 100%;"> <h1>Espace Parents</h1>
-          <h4>Ecole Multisports • Outdoor 07 • Saison <?php echo $this->Formatage->current_season();?>></h4></td>
+          <h4>Ecole Multisports • Outdoor 07 • Saison <?php echo $this->Formatage->currentSeason();?></h4></td>
           <td  align="center" style="font-size:80%;" class="lien" onclick="document.location='<?= serveur;?>/users/login'"><br/><br/><i class="glyphicons exit x3"></i><br/>Espace Dirigeants</td></tr></table>
 
 </div>

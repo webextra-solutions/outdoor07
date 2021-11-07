@@ -38,7 +38,7 @@ class AppModel extends Model {
 	}
 
 	public function dateFormatBeforeSave($dateString) {
-	    return date('Y-m-d', strtotime(str_replace('/', '-',$dateString))); 
+	    return date('Y-m-d', strtotime(str_replace('/', '-',$dateString)));
 	}
 
 	public function beforeSave($options = array()) {
@@ -61,28 +61,30 @@ class AppModel extends Model {
 
 		}
 
-		
+
 
 	    if (!empty($this->data[$this->alias]['date_gp1']) and $this->data[$this->alias]['date_gp1'] != '0000-00-00 00:00:00') {
 	        $this->data[$this->alias]['date_gp1'] = $this->dateFormatBeforeSave($this->data[$this->alias]['date_gp1']);
 	        $this->data[$this->alias]['date'] = $this->dateFormatBeforeSave($this->data[$this->alias]['date_gp1']);
 
-	        
+
 	    }
 
 	    if (!empty($this->data[$this->alias]['date_gp2']) and $this->data[$this->alias]['date_gp2'] != '0000-00-00 00:00:00') {
 	        $this->data[$this->alias]['date_gp2'] = $this->dateFormatBeforeSave($this->data[$this->alias]['date_gp2']);
-	        
+
 	    }
 
 	    if (!empty($this->data[$this->alias]['date_gp3']) and $this->data[$this->alias]['date_gp3'] != '0000-00-00 00:00:00') {
 	        $this->data[$this->alias]['date_gp3'] = $this->dateFormatBeforeSave($this->data[$this->alias]['date_gp3']);
-	        
+
 	    }
 
-        if (!empty($this->data[$this->alias]['date_gp4']) and $this->data[$this->alias]['date_gp3'] != '0000-00-00 00:00:00') {
+        if (!empty($this->data[$this->alias]['date_gp4']) and $this->data[$this->alias]['date_gp4'] != '0000-00-00 00:00:00') {
             $this->data[$this->alias]['date_gp4'] = $this->dateFormatBeforeSave($this->data[$this->alias]['date_gp4']);
-
+        }
+        if (!empty($this->data[$this->alias]['date_gp5']) and $this->data[$this->alias]['date_gp5'] != '0000-00-00 00:00:00') {
+            $this->data[$this->alias]['date_gp5'] = $this->dateFormatBeforeSave($this->data[$this->alias]['date_gp5']);
         }
 
 	    if (!empty($this->data[$this->alias]['ddn']) and $this->data[$this->alias]['ddn'] != '0000-00-00 00:00:00') {
@@ -96,17 +98,17 @@ class AppModel extends Model {
 
 
 	public function afterFind($results, $primary = false) {
-	   	foreach ($results as $key => $val) {  		
-			if (isset($val[$this->alias]['ddn'])) {				
+	   	foreach ($results as $key => $val) {
+			if (isset($val[$this->alias]['ddn'])) {
 				$results[$key][$this->alias]['ddn_day'] = substr($val[$this->alias]['ddn'],8,2);
 				$results[$key][$this->alias]['ddn_month'] = substr($val[$this->alias]['ddn'],5,2);
-				$results[$key][$this->alias]['ddn_year'] = substr($val[$this->alias]['ddn'],0,4);				
+				$results[$key][$this->alias]['ddn_year'] = substr($val[$this->alias]['ddn'],0,4);
 			}
 
 			if (isset($val[$this->alias]['date'])) {
 				if ($val[$this->alias]['date'] == '1970-01-01 00:00:00') {
 					$results[$key][$this->alias]['date'] = '';
-				} else {	 
+				} else {
 					$results[$key][$this->alias]['date'] = $this->dateFormatAfterFind(
 						$val[$this->alias]['date']
 					);
@@ -116,7 +118,7 @@ class AppModel extends Model {
 			if (isset($val[$this->alias]['date_gp1'])) {
 				if ($val[$this->alias]['date_gp1'] == '1970-01-01 00:00:00') {
 					$results[$key][$this->alias]['date_gp1'] = '';
-				} else {	 
+				} else {
 					$results[$key][$this->alias]['date_gp1'] = $this->dateFormatAfterFind(
 						$val[$this->alias]['date_gp1']
 					);
@@ -126,7 +128,7 @@ class AppModel extends Model {
 			if (isset($val[$this->alias]['date_gp2'])) {
 				if ($val[$this->alias]['date_gp2'] == '1970-01-01 00:00:00') {
 					$results[$key][$this->alias]['date_gp2'] = '';
-				} else {	 
+				} else {
 					$results[$key][$this->alias]['date_gp2'] = $this->dateFormatAfterFind(
 						$val[$this->alias]['date_gp2']
 					);
@@ -136,7 +138,7 @@ class AppModel extends Model {
 			if (isset($val[$this->alias]['date_gp3'])) {
 				if ($val[$this->alias]['date_gp3'] == '1970-01-01 00:00:00') {
 					$results[$key][$this->alias]['date_gp3'] = '';
-				} else {	 
+				} else {
 					$results[$key][$this->alias]['date_gp3'] = $this->dateFormatAfterFind(
 						$val[$this->alias]['date_gp3']
 					);
@@ -153,10 +155,20 @@ class AppModel extends Model {
                 }
             }
 
+			  if (isset($val[$this->alias]['date_gp5'])) {
+					if ($val[$this->alias]['date_gp5'] == '1970-01-01 00:00:00') {
+						$results[$key][$this->alias]['date_gp5'] = '';
+					} else {
+						$results[$key][$this->alias]['date_gp5'] = $this->dateFormatAfterFind(
+							$val[$this->alias]['date_gp5']
+						);
+					}
+				}
+
 			if (isset($val[$this->alias]['ddn'])) {
 				if ($val[$this->alias]['ddn'] == '1970-01-01 00:00:00') {
 					$results[$key][$this->alias]['ddn'] = '';
-				} else {	 
+				} else {
 					$results[$key][$this->alias]['ddn'] = $this->dateFormatAfterFind(
 						$val[$this->alias]['ddn']
 					);
@@ -164,10 +176,10 @@ class AppModel extends Model {
 			}
 
     	}
-    	return $results;	    
+    	return $results;
 	}
 
 
 
-	
+
 }

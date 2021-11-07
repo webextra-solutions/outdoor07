@@ -123,8 +123,8 @@ define('emailAdmin', 'sameul.ginot@gmail.com');
 if($_SERVER['SERVER_PORT'] == '8888'){
 	define('serveur', 'http://'.$_SERVER['HTTP_HOST'].'/extranet');
 } else {
-	define('serveur', 'http://'.$_SERVER['HTTP_HOST']);
-	define('serveurhttps', 'http://'.$_SERVER['HTTP_HOST']);
+	define('serveur', 'https://'.$_SERVER['HTTP_HOST']);
+	define('serveurhttps', 'https://'.$_SERVER['HTTP_HOST']);
 }
 
 

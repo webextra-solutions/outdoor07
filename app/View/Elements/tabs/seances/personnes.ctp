@@ -4,9 +4,9 @@
     $('#search-pratiquants').autocomplete({
       minLength    : 1,
       source        : serveur+'/pratiquants/searchPratiquant',
-      select:  function(event, ui) { 
+      select:  function(event, ui) {
        window.location.href = serveur+'/pratiquants/view/'+ui.item.id+'/general';
-      } 
+      }
     });
 
 
@@ -17,12 +17,12 @@
 
 
 
- 
+
 <div class="row">
 
-  <? for ($i=1; $i <= $seance['Seance']['nb_groups']; $i++) { 
+  <? for ($i=1; $i <= $seance['Seance']['nb_groups']; $i++) {
 
-          if($seance['Seance']['nb_groups'] == 4){$col = 3;}
+          if($seance['Seance']['nb_groups'] >= 4){$col = 3;}
           if($seance['Seance']['nb_groups'] == 3){$col = 4;}
           if($seance['Seance']['nb_groups'] == 2){$col = 6;}
           if($seance['Seance']['nb_groups'] == 1){$col = 12;}
@@ -37,7 +37,7 @@
 
 
             <!-- ENCADRANTS GP -->
-            <tr>              
+            <tr>
               <td colspan="8" bgcolor="#F0F0F0" style="padding: 1%;"><h5>Encadrants</h5></td>
               <td bgcolor="#F0F0F0" style="padding-left: 1%;"><h5><b class="gly_gris"><?= count(${"encadrants_gp$i"});?></b></h5></td>
 
@@ -57,27 +57,27 @@
                 <td></td>
                 <td></td>
                 <td class="lien" onclick="document.location='<?= serveur;?>/personnes/view/<?= $row['PersonnesSeance']['personne_id'];?>'" ><?= $row['PersonnesSeance']['PNF']; ?></td>
-                <td></td>    
-                <td align="right" width="30"> 
-                    <?php echo $this->Html->link('<i class="glyphicons zoom_in"></i> ', 
-                        array('controller' => 'personnes', 'action' => 'view', $row['PersonnesSeance']['personne_id'], 'identite'), 
+                <td></td>
+                <td align="right" width="30">
+                    <?php echo $this->Html->link('<i class="glyphicons zoom_in"></i> ',
+                        array('controller' => 'personnes', 'action' => 'view', $row['PersonnesSeance']['personne_id'], 'identite'),
                         array('class'=>'btn btn-default btn-xs','escape' => false, 'title' => 'voir / modifier', 'data-toggle'=>'tooltip', 'data-placement'=>'left')
                     );?>
-                </td> 
-                <td align="right" width="30"> 
-                      <?php echo $this->Html->link('<i class="glyphicons bin"></i> ', 
-                    array('action' => 'deletePersonneSeance',  $row['PersonnesSeance']['id'], $row['PersonnesSeance']['seance_id']), 
+                </td>
+                <td align="right" width="30">
+                      <?php echo $this->Html->link('<i class="glyphicons bin"></i> ',
+                    array('action' => 'deletePersonneSeance',  $row['PersonnesSeance']['id'], $row['PersonnesSeance']['seance_id']),
                     array('class'=>'btn btn-danger btn-xs','escape' => false, 'title' => 'supprimer', 'data-toggle'=>'tooltip', 'data-placement'=>'left'),
                     'Etes-vous sûr de vouloir supprimer cette personne de la séance ?'
-                  );?></td>   
+                  );?></td>
               </tr>
             <?php endforeach; ?>
             <tr><td colspan="9" height="10px" bgcolor="#FFFFFF"></td></tr>
 
-            
+
 
             <!-- ACCOMPAGNATEURS GP 1 -->
-            <tr>              
+            <tr>
               <td colspan="8" bgcolor="#F0F0F0" style="padding: 1%;"><h5>Accompagnateurs</h5></td>
               <td bgcolor="#F0F0F0" style="padding-left: 1%;"><h5><b class="gly_gris"><?= count(${"accomps_gp$i"});?></b></h5></td>
 
@@ -94,19 +94,19 @@
                 <td width="35px" colspan="2" align="right"><span class="gly_gris"><?= $this->Listes->statutAccomp($row['PersonnesSeance']['statut_accompagnateur']); ?></span></td>
                 <td class="lien" onclick="document.location='<?= serveur;?>/personnes/view/<?= $row['PersonnesSeance']['personne_id'];?>'" ><?= $row['PersonnesSeance']['PNF']; ?></td>
                 <td></td>
-                <td align="right" width="30"> 
-                          <?php echo $this->Html->link('<i class="glyphicons zoom_in"></i> ', 
-                              array('controller' => 'personnes', 'action' => 'view', $row['PersonnesSeance']['personne_id'], 'identite'), 
+                <td align="right" width="30">
+                          <?php echo $this->Html->link('<i class="glyphicons zoom_in"></i> ',
+                              array('controller' => 'personnes', 'action' => 'view', $row['PersonnesSeance']['personne_id'], 'identite'),
                               array('class'=>'btn btn-default btn-xs','escape' => false, 'title' => 'voir / modifier', 'data-toggle'=>'tooltip', 'data-placement'=>'left')
                           );?>
                       </td>
-                <td align="right" width="30"> 
-                    <?php echo $this->Html->link('<i class="glyphicons bin"></i> ', 
-                      array('action' => 'deleteAccompSeance',  $row['PersonnesSeance']['id'], $row['PersonnesSeance']['seance_id']), 
+                <td align="right" width="30">
+                    <?php echo $this->Html->link('<i class="glyphicons bin"></i> ',
+                      array('action' => 'deleteAccompSeance',  $row['PersonnesSeance']['id'], $row['PersonnesSeance']['seance_id']),
                       array('class'=>'btn btn-danger btn-xs','escape' => false, 'title' => 'supprimer', 'data-toggle'=>'tooltip', 'data-placement'=>'left'),
                       'Etes-vous sûr de vouloir supprimer cet accompagntauer de la séance ?'
-                    );?>                 
-                </td> 
+                    );?>
+                </td>
             </tr>
             <?php endforeach; ?>
             <tr><td colspan="8" height="10px" bgcolor="#FFFFFF"></td></tr>
@@ -114,7 +114,7 @@
 
 
             <!-- ENFANTS GP 1 -->
-             <tr>              
+             <tr>
               <td colspan="6" bgcolor="#F0F0F0" style="padding: 1%;"><h5>Enfants</h5></td>
               <td bgcolor="#F0F0F0" style="padding-left: 1%;"><h5><b class="gly_gris"><?= count(${"pratiquants_gp$i"});?></b></h5></td>
               <td bgcolor="#F0F0F0" style="padding-left: 1%;"><h5><b class="gly_orange"><?= ${"nb_pratiquants_gp_prev$i"};?></b></h5></td>
@@ -157,27 +157,27 @@
                   <? }?>
                   <td width="35px"><? if($row['PersonnesSeance']['nb_others_persons'] != 0){?><div class="gly_gris" align="center" title="Personnes supplémentaires"><?= $row['PersonnesSeance']['nb_others_persons'];?></div><? }?></td>
                   <td class="lien" onclick="document.location='<?= serveur;?>/personnes/view/<?= $row['PersonnesSeance']['personne_id'];?>'" ><?= $row['PersonnesSeance']['PNF']; ?></td>
-                  <td align="right" width="30"> 
-                              <?php echo $this->Html->link('<i class="glyphicons zoom_in"></i> ', 
-                                  array('controller' => 'personnes', 'action' => 'view', $row['PersonnesSeance']['personne_id'], 'identite'), 
+                  <td align="right" width="30">
+                              <?php echo $this->Html->link('<i class="glyphicons zoom_in"></i> ',
+                                  array('controller' => 'personnes', 'action' => 'view', $row['PersonnesSeance']['personne_id'], 'identite'),
                                   array('class'=>'btn btn-default btn-xs','escape' => false, 'title' => 'voir / modifier', 'data-toggle'=>'tooltip', 'data-placement'=>'left')
                               );?>
                           </td>
 
                  <td align="right" width="30"> <button type="button" class="btn btn-default btn-xs bascules" rel="<?= $row['Personne']['FN']; ?>-<?= $row['PersonnesSeance']['id']; ?>"><i class="glyphicons share"></i></button></td>
-                 <td align="right" width="30"> 
-                        <?php echo $this->Html->link('<i class="glyphicons bin"></i> ', 
-                      array('action' => 'deletePersonneSeance',  $row['PersonnesSeance']['id'], $row['PersonnesSeance']['seance_id']), 
+                 <td align="right" width="30">
+                        <?php echo $this->Html->link('<i class="glyphicons bin"></i> ',
+                      array('action' => 'deletePersonneSeance',  $row['PersonnesSeance']['id'], $row['PersonnesSeance']['seance_id']),
                       array('class'=>'btn btn-danger btn-xs','escape' => false, 'title' => 'supprimer', 'data-toggle'=>'tooltip', 'data-placement'=>'left'),
                       'Etes-vous sûr de vouloir supprimer cette personne de la séance ?'
-                    );?></td>   
+                    );?></td>
                 </tr>
             <?php endforeach; ?>
-            <tr>              
+            <tr>
               <td colspan="9" style="padding: 1%;"></td> </tr>
 
             <!-- PERSONNES SUPP GP 1 -->
-            <tr>              
+            <tr>
               <td colspan="8" bgcolor="#F0F0F0" style="padding: 1%;"><h5>Personnes supplémentaires</h5></td>
               <td bgcolor="#F0F0F0" style="padding-left: 1%;"><h5><b class="gly_gris"><?= ${"persons_supp_gp$i"};?></b></h5></td> </tr>
       </table>
