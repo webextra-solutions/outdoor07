@@ -153,7 +153,7 @@ class SeancesController extends AppController {
 			'limit' => 100,
 			'order' => array('date' => 'DESC'));
 
-		$this->set('seances', $this->paginate('Seance',array('date >=' => '2019-09-01')));
+		$this->set('seances', $this->paginate('Seance',array('date >=' => '2020-01-01')));
 
 
 
@@ -703,7 +703,8 @@ class SeancesController extends AppController {
 
 			if($this->request->data['Seance']['type_add'] == 1){
 
-				$this->Seance->contain(array('PersonnesSeance' => array('conditions' => array('active' => 1))));
+//				$this->Seance->contain(array('PersonnesSeance' => array('conditions' => array('active' => 1))));
+				$this->Seance->contain(array('PersonnesSeance'));
 				$seance = $this->Seance->findById($this->request->data['Seance']['add_num']);
 
 				$this->request->data['Seance']['besoins_materiels'] = $seance['Seance']['besoins_materiels'];
@@ -823,6 +824,7 @@ class SeancesController extends AppController {
 		$this->loadModel('PersonnesSeance');
 		$destinataires = $this->PersonnesSeance->find('all', array(
 			'conditions' => array(
+//			    'Personne.id' => 1,
 				'PersonnesSeance.type' => 1,
 				'PersonnesSeance.seance_id' => current($seances),
 				'Personne.email !=' => '',
@@ -834,8 +836,6 @@ class SeancesController extends AppController {
 			'limit' =>  15
 		));
 
-		
-		//debug($destinataires); die;
 		
 
 
@@ -863,7 +863,9 @@ class SeancesController extends AppController {
 			if(alerteEmail){
 				if($email->send()){
 
-					$envoi++;
+                    CakeLog::info('[EMAIL SEANCE]['.$row['Personne']['name'].' '.$row['Personne']['first_name'].'][EMAIL ENVOYE]', 'email_seance');
+
+                    $envoi++;
 					$this->loadModel('PersonnesSeance');
 					//$this->PersonnesSeance->id = $row['PersonnesSeance']['id'];
 					//$this->PersonnesSeance->save(array('email' => date('Y-m-d H:i')));
@@ -874,11 +876,9 @@ class SeancesController extends AppController {
 						array('PersonnesSeance.seance_id' => $seances, 'PersonnesSeance.personne_id' => $row['PersonnesSeance']['personne_id'])
 					);
 
-					//debug($row['PersonnesSeance']['id'].'-'.$row['Personne']['email'].' - ok');
 				} else {
-					///debug($row['PersonnesSeance']['id'].'-'.$row['Personne']['email'].' - erreur');
-
-				};				
+                    CakeLog::error('[EMAIL SEANCE]['.$row['Personne']['name'].' '.$row['Personne']['first_name'].'][EMAIL NON ENVOYE]', 'email_seance');
+                };
 			}
 
 			/*try{
@@ -977,10 +977,10 @@ class SeancesController extends AppController {
 						array('PersonnesSeance.seance_id' => $seances, 'PersonnesSeance.personne_id' => $row['PersonnesSeance']['personne_id'])
 					);
 
-					//debug($row['PersonnesSeance']['id'].'-'.$row['Personne']['email'].' - OK');
+                    CakeLog::info('[EMAIL RAPPEL SEANCE]['.$row['Personne']['name'].' '.$row['Personne']['first_name'].'][EMAIL ENVOYE]', 'email_seance');
 				}else{
 
-					//debug($row['PersonnesSeance']['id'].'-'.$row['Personne']['email'].' - NO');
+                    CakeLog::error('[EMAIL RAPPEL SEANCE]['.$row['Personne']['name'].' '.$row['Personne']['first_name'].'][EMAIL NON ENVOYE]', 'email_seance');
 				};				
 			}
 
